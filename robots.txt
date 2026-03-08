@@ -1,0 +1,29 @@
+# Carolina Blinds — robots.txt
+# We WANT all bots to crawl, including AI search engines
+
+User-agent: *
+Allow: /
+
+# AI Search Crawlers — explicitly welcomed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+Sitemap: https://www.carolinablinds.com/sitemap.xml

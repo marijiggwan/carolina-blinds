@@ -1,0 +1,30 @@
+[build]
+  publish = "."
+
+# Custom headers for performance and security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+# Pretty URLs — serve /about.html when /about is requested
+[[redirects]]
+  from = "/products"
+  to = "/products/index.html"
+  status = 200
+
+# Netlify Forms
+[build.processing]
+  skip_processing = false

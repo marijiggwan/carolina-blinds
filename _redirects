@@ -1,0 +1,35 @@
+# Carolina Blinds — Wix to Netlify 301 Redirects
+# Generated March 2026 | Preserves 7 years of SEO equity
+# First match wins — specific rules before wildcards
+
+# === MAIN PAGES ===
+/window-covering-brands          /products          301
+/hunter-douglas-gallery           /products          301
+/alta                             /products          301
+/eclipse                          /products          301
+/our-window-covering-products     /products          301
+/window-blinds                    /products/blinds   301
+/window-shades                    /products/shades   301
+/window-shutters                  /products/shutters 301
+/specialty-windows                /products/specialty 301
+/powerview                        /products/motorization 301
+/window-solutions                 /products          301
+/energy                           /products/specialty 301
+/free-in-home-consult             /contact           301
+/virtual-home-consultations       /contact           301
+/window-covering-design-blog      /blog              301
+/videos                           /products          301
+/about-carolina-blinds            /about             301
+/hendersonville-nc-window-coverings /areas/hendersonville 301
+/weaverville-gallery              /areas/weaverville 301
+/promotions                       /                  301
+/contact-carolina-blinds          /contact           301
+/privacy-policy                   /privacy           301
+
+# === BLOG CATEGORIES (all → /blog) ===
+/window-covering-design-blog/categories/*  /blog    301
+
+# === BLOG POSTS ===
+# Phase 1: All redirect to /blog
+# Phase 2: Update specific high-value posts to migrated URLs
+/post/*                           /blog              301
