@@ -135,45 +135,6 @@
             background: url('https://static.wixstatic.com/media/9a2fe1_2f67983e85954715b7333c65c8a5ef8cf001.jpg/v1/fill/w_1600,h_800,al_c,q_85,enc_avif,quality_auto/9a2fe1_2f67983e85954715b7333c65c8a5ef8cf001.jpg') center/cover;
             opacity: 0.15;
         }
-        .hero__subtitle { font-size: 19px; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 28px; font-weight: 300; max-width: 680px; }
-        .hero__badges { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 28px; }
-        .hero__badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); font-size: 14px; font-weight: 500; padding: 8px 16px; border-radius: 24px; }
-        .hero__badge svg { flex-shrink: 0; }
-        /* City page-specific styles */
-        .city-highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
-        .city-highlight { background: white; border-radius: var(--radius-md); padding: 28px; box-shadow: var(--shadow-sm); border: 1px solid var(--cb-border); text-align: center; }
-        .city-highlight__icon { width: 52px; height: 52px; background: var(--cb-warm); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
-        .city-highlight h3 { font-family: 'Source Sans 3', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--cb-blue); }
-        .city-highlight p { font-size: 14px; color: var(--cb-text-light); line-height: 1.6; }
-        .project-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
-        .project-showcase__images { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .project-showcase__images img { border-radius: var(--radius-md); object-fit: cover; width: 100%; height: 200px; box-shadow: var(--shadow-sm); }
-        .project-showcase__content h3 { font-size: 1.4rem; margin-bottom: 12px; }
-        .project-showcase__content p { color: var(--cb-text-light); margin-bottom: 16px; }
-        .project-showcase__detail { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--cb-text-light); margin-bottom: 8px; }
-        .project-showcase__detail svg { color: var(--cb-green); flex-shrink: 0; }
-        .products-offered { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 32px; }
-        .product-offer { display: flex; gap: 16px; align-items: flex-start; padding: 20px; background: white; border-radius: var(--radius-md); border: 1px solid var(--cb-border); transition: all 0.2s; text-decoration: none; color: var(--cb-text); }
-        .product-offer:hover { border-color: var(--cb-blue); background: var(--cb-warm); color: var(--cb-text); }
-        .product-offer__icon { width: 44px; height: 44px; background: var(--cb-blue); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .product-offer h4 { font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 700; margin-bottom: 4px; }
-        .product-offer p { font-size: 13px; color: var(--cb-text-light); line-height: 1.5; }
-        .nearby-areas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
-        .nearby-area { display: flex; align-items: center; gap: 8px; padding: 14px 20px; background: white; border: 1px solid var(--cb-border); border-radius: var(--radius-sm); font-weight: 600; font-size: 15px; color: var(--cb-text); transition: all 0.2s; text-decoration: none; }
-        .nearby-area:hover { border-color: var(--cb-blue); color: var(--cb-blue); background: var(--cb-warm); }
-        .nearby-area svg { color: var(--cb-text-muted); flex-shrink: 0; }
-        .directions-card { background: white; border: 1px solid var(--cb-border); border-radius: var(--radius-md); padding: 32px; }
-        .directions-card h3 { font-family: 'Source Sans 3', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; margin-top: 0; }
-        .directions-card p { font-size: 15px; color: var(--cb-text-light); margin-bottom: 12px; line-height: 1.7; }
-        @media (max-width: 960px) {
-            .city-highlights { grid-template-columns: 1fr; }
-            .project-showcase { grid-template-columns: 1fr; }
-            .products-offered { grid-template-columns: 1fr; }
-            .nearby-areas { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 640px) {
-            .nearby-areas { grid-template-columns: 1fr; }
-        }
     </style>
 </head>
 <body>
