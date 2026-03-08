@@ -123,6 +123,22 @@
 
     <link rel="stylesheet" href="/css/styles.css">
     <style>
+        /* Hendersonville hero background */
+        .hero {
+            background: linear-gradient(135deg, var(--cb-blue) 0%, var(--cb-blue-dark) 100%);
+            padding: 80px 0 88px;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://static.wixstatic.com/media/9a2fe1_2f67983e85954715b7333c65c8a5ef8cf001.jpg/v1/fill/w_1600,h_800,al_c,q_85,enc_avif,quality_auto/9a2fe1_2f67983e85954715b7333c65c8a5ef8cf001.jpg') center/cover;
+            opacity: 0.15;
+        }
+        .hero__subtitle { font-size: 19px; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 28px; font-weight: 300; max-width: 680px; }
+        .hero__badges { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 28px; }
+        .hero__badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); font-size: 14px; font-weight: 500; padding: 8px 16px; border-radius: 24px; }
+        .hero__badge svg { flex-shrink: 0; }
         /* City page-specific styles */
         .city-highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
         .city-highlight { background: white; border-radius: var(--radius-md); padding: 28px; box-shadow: var(--shadow-sm); border: 1px solid var(--cb-border); text-align: center; }
