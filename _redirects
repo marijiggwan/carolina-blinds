@@ -32,4 +32,11 @@
 # === BLOG POSTS ===
 # Phase 1: All redirect to /blog
 # Phase 2: Update specific high-value posts to migrated URLs
+# Phase 1 migrated blog posts
+/post/child-safe-window-coverings-a-must-for-families-in-weaverville-nc  /blog/child-safe-window-coverings-weaverville  301
+/post/top-privacy-solutions-for-mountain-living  /blog/privacy-solutions-mountain-living  301
+/post/enhancing-your-mountain-home-custom-window-treatments-for-asheville-s-unique-climate  /blog/custom-window-treatments-asheville  301
+/post/energy-efficient-window-treatments-for-mountain-homes-in-asheville-and-hendersonville-save-on-bills  /blog/energy-efficient-window-treatments-wnc  301
+
+# Remaining blog posts redirect to blog index
 /post/*                           /blog              301

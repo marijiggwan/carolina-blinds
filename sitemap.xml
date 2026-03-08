@@ -29,4 +29,14 @@
 
     <!-- Utility -->
     <url><loc>https://www.carolinablinds.com/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+    <!-- Blog Posts -->
+    <url><loc>https://www.carolinablinds.com/blog/child-safe-window-coverings-weaverville</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://www.carolinablinds.com/blog/privacy-solutions-mountain-living</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://www.carolinablinds.com/blog/custom-window-treatments-asheville</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://www.carolinablinds.com/blog/energy-efficient-window-treatments-wnc</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://www.carolinablinds.com/blog/2026-window-treatment-trends</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <!-- Hub Pages -->
+    <url><loc>https://www.carolinablinds.com/areas</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://www.carolinablinds.com/gallery</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://www.carolinablinds.com/services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
