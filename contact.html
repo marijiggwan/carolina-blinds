@@ -53,8 +53,9 @@
                     <h2>Get In Touch</h2>
                     <p style="color: var(--cb-text-light); margin-bottom: 24px;">Whether you're ready to schedule a consultation or just have a question, we'd love to hear from you.</p>
 
-                    <form name="contact" method="POST" data-netlify="true" action="/thank-you" style="display: grid; gap: 16px;">
+                    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you" style="display: grid; gap: 16px;">
                         <input type="hidden" name="form-name" value="contact">
+                        <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
                             <div>
                                 <label style="display: block; font-weight: 600; font-size: 14px; margin-bottom: 6px;">First Name *</label>
@@ -65,22 +66,42 @@
                                 <input type="text" name="last-name" required style="width: 100%; padding: 12px 16px; border: 1px solid var(--cb-border); border-radius: var(--radius-sm); font-size: 16px; font-family: inherit;">
                             </div>
                         </div>
-                        <div>
-                            <label style="display: block; font-weight: 600; font-size: 14px; margin-bottom: 6px;">Email *</label>
-                            <input type="email" name="email" required style="width: 100%; padding: 12px 16px; border: 1px solid var(--cb-border); border-radius: var(--radius-sm); font-size: 16px; font-family: inherit;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                            <div>
+                                <label style="display: block; font-weight: 600; font-size: 14px; margin-bottom: 6px;">Email *</label>
+                                <input type="email" name="email" required style="width: 100%; padding: 12px 16px; border: 1px solid var(--cb-border); border-radius: var(--radius-sm); font-size: 16px; font-family: inherit;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-weight: 600; font-size: 14px; margin-bottom: 6px;">Phone *</label>
+                                <input type="tel" name="phone" required style="width: 100%; padding: 12px 16px; border: 1px solid var(--cb-border); border-radius: var(--radius-sm); font-size: 16px; font-family: inherit;">
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                            <div>
+                                <label style="display: block; font-weight: 600; font-size: 14px; margin-bottom: 6px;">Street Address</label>
+                                <input type="text" name="address" style="width: 100%; padding: 12px 16px; border: 1px solid var(--cb-border); border-radius: var(--radius-sm); font-size: 16px; font-family: inherit;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-weight: 600; font-size: 14px; margin-bottom: 6px;">City *</label>
+                                <input type="text" name="city" required placeholder="e.g., Hendersonville, Asheville" style="width: 100%; padding: 12px 16px; border: 1px solid var(--cb-border); border-radius: var(--radius-sm); font-size: 16px; font-family: inherit;">
+                            </div>
                         </div>
                         <div>
-                            <label style="display: block; font-weight: 600; font-size: 14px; margin-bottom: 6px;">Phone</label>
-                            <input type="tel" name="phone" style="width: 100%; padding: 12px 16px; border: 1px solid var(--cb-border); border-radius: var(--radius-sm); font-size: 16px; font-family: inherit;">
+                            <label style="display: block; font-weight: 600; font-size: 14px; margin-bottom: 6px;">Details, Questions or Comments</label>
+                            <textarea name="message" rows="4" placeholder="Let us know anything that might be helpful." style="width: 100%; padding: 12px 16px; border: 1px solid var(--cb-border); border-radius: var(--radius-sm); font-size: 16px; font-family: inherit; resize: vertical;"></textarea>
                         </div>
                         <div>
-                            <label style="display: block; font-weight: 600; font-size: 14px; margin-bottom: 6px;">City/Area</label>
-                            <input type="text" name="city" placeholder="e.g., Hendersonville, Asheville, Weaverville" style="width: 100%; padding: 12px 16px; border: 1px solid var(--cb-border); border-radius: var(--radius-sm); font-size: 16px; font-family: inherit;">
+                            <label style="display: block; font-weight: 600; font-size: 14px; margin-bottom: 10px;">How did you hear about us?</label>
+                            <div style="display: grid; gap: 8px;">
+                                <label style="font-size: 15px; color: var(--cb-text-light); display: flex; align-items: center; gap: 8px; cursor: pointer;"><input type="radio" name="referral-source" value="Referral" style="accent-color: var(--cb-blue);"> Referral</label>
+                                <label style="font-size: 15px; color: var(--cb-text-light); display: flex; align-items: center; gap: 8px; cursor: pointer;"><input type="radio" name="referral-source" value="Online Search" style="accent-color: var(--cb-blue);"> Online Search</label>
+                                <label style="font-size: 15px; color: var(--cb-text-light); display: flex; align-items: center; gap: 8px; cursor: pointer;"><input type="radio" name="referral-source" value="Previous Customer" style="accent-color: var(--cb-blue);"> Previous Customer</label>
+                                <label style="font-size: 15px; color: var(--cb-text-light); display: flex; align-items: center; gap: 8px; cursor: pointer;"><input type="radio" name="referral-source" value="Sunday Paper" style="accent-color: var(--cb-blue);"> Sunday Paper</label>
+                                <label style="font-size: 15px; color: var(--cb-text-light); display: flex; align-items: center; gap: 8px; cursor: pointer;"><input type="radio" name="referral-source" value="Billboard" style="accent-color: var(--cb-blue);"> Billboard</label>
+                                <label style="font-size: 15px; color: var(--cb-text-light); display: flex; align-items: center; gap: 8px; cursor: pointer;"><input type="radio" name="referral-source" value="Other" style="accent-color: var(--cb-blue);"> Other (vehicles, etc.)</label>
+                            </div>
                         </div>
-                        <div>
-                            <label style="display: block; font-weight: 600; font-size: 14px; margin-bottom: 6px;">How Can We Help?</label>
-                            <textarea name="message" rows="4" style="width: 100%; padding: 12px 16px; border: 1px solid var(--cb-border); border-radius: var(--radius-sm); font-size: 16px; font-family: inherit; resize: vertical;"></textarea>
-                        </div>
+                        <div data-netlify-recaptcha="true"></div>
                         <button type="submit" class="btn btn--primary" style="justify-content: center;">Send Message</button>
                     </form>
                 </div>
