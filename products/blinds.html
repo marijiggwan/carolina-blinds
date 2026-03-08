@@ -98,47 +98,6 @@
     <style>
         /* Blinds hero background */
         .hero__bg { background-image: url('https://static.wixstatic.com/media/9a2fe1_224e09c22677470da4d5936e591c8a2b~mv2.jpg/v1/fill/w_1920,h_900,al_c,q_85,enc_avif,quality_auto/9a2fe1_224e09c22677470da4d5936e591c8a2b~mv2.jpg'); }
-        /* Blinds page-specific styles */
-        .types__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 48px; }
-        .type-card { display: grid; grid-template-columns: 200px 1fr; background: white; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid var(--cb-border); transition: all 0.3s; }
-        .type-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--cb-yellow); }
-        .type-card__img { height: 100%; min-height: 200px; }
-        .type-card__img img { width: 100%; height: 100%; object-fit: cover; }
-        .type-card__body { padding: 28px; display: flex; flex-direction: column; justify-content: center; }
-        .type-card__body h3 { font-family: 'Source Sans 3', sans-serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; color: var(--cb-blue); }
-        .type-card__body p { font-size: 15px; color: var(--cb-text-light); line-height: 1.65; }
-        .type-card__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
-        .type-card__tag { font-size: 12px; font-weight: 600; padding: 4px 10px; background: var(--cb-warm); border-radius: 12px; color: var(--cb-text-light); }
-        .type-card__best { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 700; color: var(--cb-green); margin-top: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .types__header { text-align: center; max-width: 680px; margin: 0 auto; }
-        .types__header h2 { font-size: 2rem; margin-bottom: 12px; }
-        .types__header p { font-size: 18px; color: var(--cb-text-light); }
-        .guide__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-        .guide__content h2 { font-size: 2rem; margin-bottom: 16px; }
-        .guide__content > p { color: var(--cb-text-light); margin-bottom: 24px; font-size: 17px; }
-        .guide__table { width: 100%; border-collapse: collapse; font-size: 15px; }
-        .guide__table th { text-align: left; font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--cb-text-muted); padding: 12px 16px; border-bottom: 2px solid var(--cb-border); }
-        .guide__table td { padding: 14px 16px; border-bottom: 1px solid var(--cb-border); color: var(--cb-text-light); vertical-align: top; }
-        .guide__table td:first-child { font-weight: 600; color: var(--cb-text); white-space: nowrap; }
-        .guide__table tr:last-child td { border-bottom: none; }
-        .guide__check { color: var(--cb-green); font-weight: 700; }
-        .guide__cta { background: var(--cb-warm); border-radius: var(--radius-md); padding: 32px; text-align: center; }
-        .guide__cta h3 { font-family: 'Source Sans 3', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
-        .guide__cta p { font-size: 15px; color: var(--cb-text-light); margin-bottom: 16px; }
-        .options__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
-        .option-card { background: white; border-radius: var(--radius-md); padding: 32px 28px; box-shadow: var(--shadow-sm); border: 1px solid var(--cb-border); text-align: center; }
-        .option-card__icon { width: 56px; height: 56px; background: var(--cb-warm); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
-        .option-card h3 { font-family: 'Source Sans 3', sans-serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: var(--cb-blue); }
-        .option-card p { font-size: 14px; color: var(--cb-text-light); line-height: 1.65; }
-        @media (max-width: 960px) {
-            .types__grid { grid-template-columns: 1fr; }
-            .guide__grid { grid-template-columns: 1fr; }
-            .options__grid { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 640px) {
-            .type-card { grid-template-columns: 1fr; }
-            .type-card__img { min-height: 180px; }
-        }
     </style>
 </head>
 <body>
