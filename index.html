@@ -72,7 +72,13 @@
 
     <link rel="stylesheet" href="/css/styles.css">
     <style>
-        /* Homepage-specific: Hero with grid layout + video */
+        /* Homepage-specific: Hero with background image, grid layout + video */
+        .home-hero .hero__bg {
+            background-image: url('https://static.wixstatic.com/media/9a2fe1_2f67983e85954715b7333c65c8a5ef8cf001.jpg/v1/fill/w_1920,h_960,al_c,q_85,enc_avif,quality_auto/9a2fe1_2f67983e85954715b7333c65c8a5ef8cf001.jpg');
+        }
+        .home-hero .hero__overlay {
+            background: linear-gradient(135deg, rgba(0,35,71,0.92) 0%, rgba(0,59,115,0.82) 50%, rgba(0,35,71,0.7) 100%);
+        }
         .home-hero { min-height: 600px; display: flex; align-items: center; }
         .home-hero .hero__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .hero__video {
