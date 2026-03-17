@@ -3,13 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Gallery | Carolina Blinds | Western NC</title>
-    <meta name="description" content="See real window treatment installations from Carolina Blinds across Western NC.">
+    <title>Project Gallery — Installations &amp; Video Demos | Carolina Blinds</title>
+    <meta name="description" content="Browse real window treatment installations from WNC homes. Shutters, shades, blinds, exterior shades, and motorization demos. 40+ YouTube videos. Carolina Blinds — since 1992.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
-    <style>.hero__bg { background-image: url('https://static.wixstatic.com/media/9a2fe1_850a9ede80d940c8977c6b1a728d86bb~mv2.jpg/v1/fill/w_1920,h_900,al_c,q_85,enc_avif,quality_auto/9a2fe1_850a9ede80d940c8977c6b1a728d86bb~mv2.jpg'); }</style>
+    <style>
+        .hero__bg { background-image: url('https://static.wixstatic.com/media/9a2fe1_850a9ede80d940c8977c6b1a728d86bb~mv2.jpg/v1/fill/w_1920,h_900,al_c,q_85,enc_avif,quality_auto/9a2fe1_850a9ede80d940c8977c6b1a728d86bb~mv2.jpg'); }
+        .filter-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 32px 0 40px; }
+        .filter-pill { padding: 8px 20px; border-radius: 24px; border: 1px solid var(--cb-border); font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s; background: transparent; color: var(--cb-text-light); font-family: 'Source Sans 3', sans-serif; }
+        .filter-pill:hover { border-color: var(--cb-blue); color: var(--cb-blue); }
+        .filter-pill.active { background: var(--cb-blue); color: white; border-color: var(--cb-blue); }
+        .gallery-section { margin-bottom: 60px; }
+        .gallery-section h2 { font-size: 1.8rem; margin-bottom: 8px; }
+        .gallery-section > p { color: var(--cb-text-light); margin-bottom: 20px; font-size: 17px; }
+        .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 24px; }
+        .photo-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-sm); cursor: pointer; transition: transform 0.3s; }
+        .photo-grid img:hover { transform: scale(1.02); }
+        .video-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 16px 0; }
+        .video-row .vid { aspect-ratio: 16/9; border-radius: var(--radius-md); overflow: hidden; }
+        .video-row .vid iframe { width: 100%; height: 100%; border: none; }
+        .playlist-link { display: inline-block; margin-top: 12px; font-size: 14px; font-weight: 600; color: var(--cb-blue-light); }
+        .yt-cta { background: var(--cb-warm); border-radius: var(--radius-lg); padding: 40px; text-align: center; margin: 48px 0; }
+        .yt-cta h2 { font-size: 1.6rem; margin-bottom: 8px; }
+        .yt-cta p { color: var(--cb-text-light); margin-bottom: 16px; }
+        .tour-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 20px; }
+        .tour-grid .tour { aspect-ratio: 16/9; border-radius: var(--radius-md); overflow: hidden; }
+        .tour-grid .tour iframe { width: 100%; height: 100%; border: none; }
+        @media (max-width: 768px) {
+            .photo-grid { grid-template-columns: repeat(2, 1fr); }
+            .video-row { grid-template-columns: 1fr; }
+            .tour-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
     <div class="top-bar"><div class="container"><div class="top-bar__phones"><a href="tel:828-697-8525">Hendersonville: (828) 697-8525</a><span>|</span><a href="tel:828-681-0210">Weaverville: (828) 681-0210</a></div><div class="top-bar__badge">Authorized Hunter Douglas Centurion Gallery</div></div></div>
@@ -27,29 +54,137 @@
         <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div></header>
     <section class="hero hero--center"><div class="hero__bg"></div><div class="hero__overlay"></div><div class="container">
-        <h1>Project <em>Gallery</em></h1>
-        <p class="hero__sub">Real installations from real WNC homes.</p>
-        <div class="hero__actions"><a href="/contact" class="btn btn--primary">Schedule Free Consultation</a><a href="tel:828-697-8525" class="btn btn--outline">Call (828) 697-8525</a></div>
+        <h1>Our <em>Work</em></h1>
+        <p class="hero__sub">Real installations from WNC homes and businesses. Browse by product type or watch video demonstrations from our YouTube channel.</p>
     </div></section>
 
-    <section class="section"><div class="container">
-            <div class="gallery__header"><h2>Our Work</h2><p>Real installations from real WNC homes. Every project by our own team.</p></div>
-            <div class="gallery__grid" style="margin-top:32px;">
-                <img src="https://static.wixstatic.com/media/9a2fe1_70b5a7d6c5624a73a5966d5ac5a9c83f~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_70b5a7d6c5624a73a5966d5ac5a9c83f~mv2.jpg" alt="Carolina Blinds installation" loading="lazy">
-                <img src="https://static.wixstatic.com/media/9a2fe1_10282e3c436b468caa1504dd6bcf054b~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_10282e3c436b468caa1504dd6bcf054b~mv2.jpg" alt="Carolina Blinds installation" loading="lazy">
-                <img src="https://static.wixstatic.com/media/9a2fe1_1a2c4a8249334f1fb27d1c932383fa8a~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_1a2c4a8249334f1fb27d1c932383fa8a~mv2.jpg" alt="Carolina Blinds installation" loading="lazy">
-                <img src="https://static.wixstatic.com/media/9a2fe1_7e666e4b159d48eba55a687ef4ae72f7~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_7e666e4b159d48eba55a687ef4ae72f7~mv2.jpg" alt="Carolina Blinds installation" loading="lazy">
-                <img src="https://static.wixstatic.com/media/9a2fe1_da1c1c2d91254eb596e017db9b136504~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_da1c1c2d91254eb596e017db9b136504~mv2.jpg" alt="Carolina Blinds installation" loading="lazy">
-                <img src="https://static.wixstatic.com/media/9a2fe1_850a9ede80d940c8977c6b1a728d86bb~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_850a9ede80d940c8977c6b1a728d86bb~mv2.jpg" alt="Carolina Blinds installation" loading="lazy">
-                <img src="https://static.wixstatic.com/media/9a2fe1_44ddfc824bc1437792940f28b87946ad~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_44ddfc824bc1437792940f28b87946ad~mv2.jpg" alt="Carolina Blinds installation" loading="lazy">
-                <img src="https://static.wixstatic.com/media/9a2fe1_962ff4cf122e4731b451186d184b7cac~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_962ff4cf122e4731b451186d184b7cac~mv2.jpg" alt="Carolina Blinds installation" loading="lazy">
-                <img src="https://static.wixstatic.com/media/9a2fe1_3a5d728323ee41bfb005e48c0f2ed5b8~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_3a5d728323ee41bfb005e48c0f2ed5b8~mv2.jpg" alt="Carolina Blinds installation" loading="lazy">
-                <img src="https://static.wixstatic.com/media/9a2fe1_090f00c96b7a4147bbd303dd043c746f~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_090f00c96b7a4147bbd303dd043c746f~mv2.jpg" alt="Carolina Blinds installation" loading="lazy">
+    <section class="section">
+        <div class="container">
+            <div class="filter-pills">
+                <button class="filter-pill active" onclick="filterGallery('all')">All</button>
+                <button class="filter-pill" onclick="filterGallery('shutters')">Shutters</button>
+                <button class="filter-pill" onclick="filterGallery('shades')">Shades</button>
+                <button class="filter-pill" onclick="filterGallery('blinds')">Blinds</button>
+                <button class="filter-pill" onclick="filterGallery('exterior')">Exterior Shades</button>
+                <button class="filter-pill" onclick="filterGallery('motorization')">Motorization</button>
             </div>
-            <div class="gallery__placeholder"><strong>More photos coming soon.</strong> Updated showroom photography scheduled for April 2026. Virtual tours: <a href="https://my.matterport.com/show/?m=9RExUvLjsVa&brand=0" target="_blank">Hendersonville</a> | <a href="https://my.matterport.com/show/?m=KJehwKPi2EV" target="_blank">Weaverville</a></div>
+
+            <div class="gallery-section" data-category="shutters">
+                <h2>Shutter Installations</h2>
+                <p>Plantation, caf&eacute;, specialty-shaped, painted, and stained shutters installed in WNC homes.</p>
+                <div class="photo-grid">
+                    <img src="https://static.wixstatic.com/media/9a2fe1_2818fd426e6e4663a15287f684973fa2~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_2818fd426e6e4663a15287f684973fa2~mv2.jpg" alt="Hunter Douglas Heritance shutters installed" loading="lazy">
+                    <img src="https://static.wixstatic.com/media/9a2fe1_4890bc94edfb4bb0a3663f184fd03f12~mv2_d_3024_4032_s_4_2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_4890bc94edfb4bb0a3663f184fd03f12~mv2_d_3024_4032_s_4_2.jpg" alt="Shutter installation by Carolina Blinds" loading="lazy">
+                    <img src="https://static.wixstatic.com/media/9a2fe1_f4aa1196301a4fd4bd6cf40e455f6dd3~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_f4aa1196301a4fd4bd6cf40e455f6dd3~mv2.jpg" alt="Shutters 101 — choosing the right style" loading="lazy">
+                    <img src="https://static.wixstatic.com/media/9a2fe1_a4fb9550bdd94d928c5b14e762313aaa~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_a4fb9550bdd94d928c5b14e762313aaa~mv2.jpg" alt="Specialty shaped shutter windows" loading="lazy">
+                    <img src="https://static.wixstatic.com/media/9a2fe1_ca1c9d34d2544143853b8fff8993b2aa~mv2.jpeg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_ca1c9d34d2544143853b8fff8993b2aa~mv2.jpeg" alt="Norman shutters installation" loading="lazy">
+                    <img src="https://static.wixstatic.com/media/9a2fe1_4fea4f73c8a5419692daf2fc0574ba51~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_4fea4f73c8a5419692daf2fc0574ba51~mv2.jpg" alt="Shutters transforming style and light" loading="lazy">
+                </div>
+                <h3 style="font-size: 1.2rem; margin-top: 32px;">Watch: Shutter Installations</h3>
+                <div class="video-row">
+                    <div class="vid"><iframe src="https://www.youtube.com/embed/fKSqOChpUa0?rel=0" title="Shutter installation by Carolina Blinds" loading="lazy" allowfullscreen></iframe></div>
+                    <div class="vid"><iframe src="https://www.youtube.com/embed/4vgjlhRVefs?rel=0" title="Shutter demonstration at Carolina Blinds" loading="lazy" allowfullscreen></iframe></div>
+                </div>
+                <a href="https://www.youtube.com/@carolinablinds/playlists" target="_blank" rel="noopener" class="playlist-link">View all shutter videos on YouTube &rarr;</a>
+            </div>
+
+            <div class="gallery-section" data-category="shades">
+                <h2>Shade Installations</h2>
+                <p>Cellular honeycomb, roller, Roman, sheers, and woven wood shades in WNC homes.</p>
+                <div class="photo-grid">
+                    <img src="https://static.wixstatic.com/media/9a2fe1_2b3ca532c15241438b71340c1b2b389b~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_2b3ca532c15241438b71340c1b2b389b~mv2.jpg" alt="Hunter Douglas Duette Honeycomb Shades" loading="lazy">
+                    <img src="https://static.wixstatic.com/media/9a2fe1_0e1034a1ba714f0395b76ea7beefb0b2~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_0e1034a1ba714f0395b76ea7beefb0b2~mv2.jpg" alt="Hunter Douglas Pirouette sheer shadings" loading="lazy">
+                    <img src="https://static.wixstatic.com/media/9a2fe1_d3c0ba281bd5406bbb2f474e84c1cc35~mv2.jpeg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_d3c0ba281bd5406bbb2f474e84c1cc35~mv2.jpeg" alt="Room darkening shades installation" loading="lazy">
+                    <img src="https://static.wixstatic.com/media/9a2fe1_b27a1aa74971431cb615383fbf7d0ede~mv2.jpeg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_b27a1aa74971431cb615383fbf7d0ede~mv2.jpeg" alt="Top down bottom up cordless cellular shades" loading="lazy">
+                    <img src="https://static.wixstatic.com/media/9a2fe1_e352e9a746d14d75b2b89caeebe05ee0~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_e352e9a746d14d75b2b89caeebe05ee0~mv2.jpg" alt="Roman shades installation" loading="lazy">
+                    <img src="https://static.wixstatic.com/media/9a2fe1_090f00c96b7a4147bbd303dd043c746f~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_090f00c96b7a4147bbd303dd043c746f~mv2.jpg" alt="Duette honeycomb shades" loading="lazy">
+                </div>
+                <h3 style="font-size: 1.2rem; margin-top: 32px;">Watch: Shade Demonstrations</h3>
+                <div class="video-row">
+                    <div class="vid"><iframe src="https://www.youtube.com/embed/eYTJ_74Oj98?rel=0" title="Hunter Douglas Duette with PowerView" loading="lazy" allowfullscreen></iframe></div>
+                    <div class="vid"><iframe src="https://www.youtube.com/embed/FgWKmtGE9R8?rel=0" title="Hunter Douglas Provenance woven wood shades" loading="lazy" allowfullscreen></iframe></div>
+                </div>
+                <a href="https://www.youtube.com/@carolinablinds/playlists" target="_blank" rel="noopener" class="playlist-link">View all shade videos on YouTube &rarr;</a>
+            </div>
+
+            <div class="gallery-section" data-category="blinds">
+                <h2>Blind Installations</h2>
+                <p>Wood, alternative wood, aluminum, and vertical blinds installed throughout WNC.</p>
+                <div class="photo-grid">
+                    <img src="https://static.wixstatic.com/media/9a2fe1_205b6bc8ebda4fd0a0fe99675ed1d073~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_205b6bc8ebda4fd0a0fe99675ed1d073~mv2.jpg" alt="Parkland wood blinds" loading="lazy">
+                    <img src="https://static.wixstatic.com/media/9a2fe1_4bcf02579ded47af93ef7a720766c1a5~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_4bcf02579ded47af93ef7a720766c1a5~mv2.jpg" alt="EverWood alternative wood blinds" loading="lazy">
+                    <img src="https://static.wixstatic.com/media/9a2fe1_10282e3c436b468caa1504dd6bcf054b~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_10282e3c436b468caa1504dd6bcf054b~mv2.jpg" alt="Vertical blinds for sliding glass doors" loading="lazy">
+                    <img src="https://static.wixstatic.com/media/9a2fe1_1a2c4a8249334f1fb27d1c932383fa8a~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_1a2c4a8249334f1fb27d1c932383fa8a~mv2.jpg" alt="Custom blinds in WNC home" loading="lazy">
+                    <img src="https://static.wixstatic.com/media/9a2fe1_da1c1c2d91254eb596e017db9b136504~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_da1c1c2d91254eb596e017db9b136504~mv2.jpg" alt="Blind installation example" loading="lazy">
+                    <img src="https://static.wixstatic.com/media/9a2fe1_7e666e4b159d48eba55a687ef4ae72f7~mv2.jpg/v1/fill/w_400,h_400,al_c,q_85,enc_avif,quality_auto/9a2fe1_7e666e4b159d48eba55a687ef4ae72f7~mv2.jpg" alt="Blinds installed in mountain home" loading="lazy">
+                </div>
+                <h3 style="font-size: 1.2rem; margin-top: 32px;">Watch: Blind Installations</h3>
+                <div class="video-row">
+                    <div class="vid"><iframe src="https://www.youtube.com/embed/JR8Qdcg-CZg?rel=0" title="Motorized angle top shades — mountain home" loading="lazy" allowfullscreen></iframe></div>
+                    <div class="vid"><iframe src="https://www.youtube.com/embed/4QIt0ZyhPDo?rel=0" title="Hunter Douglas woven Roman shades with PowerView" loading="lazy" allowfullscreen></iframe></div>
+                </div>
+                <a href="https://www.youtube.com/@carolinablinds/playlists" target="_blank" rel="noopener" class="playlist-link">View all installation videos on YouTube &rarr;</a>
+            </div>
+
+            <div class="gallery-section" data-category="exterior">
+                <h2>Exterior Shade Installations</h2>
+                <p>Eclipse E-Zip retractable screens for porches, decks, and outdoor living spaces across WNC.</p>
+                <div class="video-row">
+                    <div class="vid"><iframe src="https://www.youtube.com/embed/TLMu55ijYfQ?rel=0" title="E-Zip Shades installation by Carolina Blinds" loading="lazy" allowfullscreen></iframe></div>
+                    <div class="vid"><iframe src="https://www.youtube.com/embed/479trXndYqU?rel=0" title="How to reduce glare with E-Zip Shades" loading="lazy" allowfullscreen></iframe></div>
+                </div>
+                <div class="video-row">
+                    <div class="vid"><iframe src="https://www.youtube.com/embed/brfZDjeW7Ag?rel=0" title="24 feet wide E-Zip Shades" loading="lazy" allowfullscreen></iframe></div>
+                    <div class="vid"><iframe src="https://www.youtube.com/embed/Tkq2N3uTI-c?rel=0" title="Protect your deck with E-Zip Shades" loading="lazy" allowfullscreen></iframe></div>
+                </div>
+                <a href="https://www.youtube.com/@carolinablinds/playlists" target="_blank" rel="noopener" class="playlist-link">View all exterior shade videos on YouTube &rarr;</a>
+            </div>
+
+            <div class="gallery-section" data-category="motorization">
+                <h2>Motorization Demos</h2>
+                <p>See Hunter Douglas PowerView&reg; automation in action &mdash; operated from app, remote, and voice assistant.</p>
+                <div class="video-row">
+                    <div class="vid"><iframe src="https://www.youtube.com/embed/eYTJ_74Oj98?rel=0" title="PowerView automation demo" loading="lazy" allowfullscreen></iframe></div>
+                    <div class="vid"><iframe src="https://www.youtube.com/embed/UR4Q2JbUtUs?rel=0" title="Motorized angle top honeycomb shades" loading="lazy" allowfullscreen></iframe></div>
+                </div>
+                <div class="video-row">
+                    <div class="vid"><iframe src="https://www.youtube.com/embed/Z9HyDSycIDM?rel=0" title="Pirouette with PowerView" loading="lazy" allowfullscreen></iframe></div>
+                    <div class="vid"><iframe src="https://www.youtube.com/embed/f31aa1X5CjE?rel=0" title="Pirouette motorized wand demo" loading="lazy" allowfullscreen></iframe></div>
+                </div>
+                <a href="https://www.youtube.com/@carolinablinds/playlists" target="_blank" rel="noopener" class="playlist-link">View all motorization videos on YouTube &rarr;</a>
+            </div>
+
+            <div class="yt-cta">
+                <p style="font-size: 14px; font-weight: 600; color: var(--cb-blue-light); margin-bottom: 8px;">40+ videos</p>
+                <h2>Visit Our YouTube Channel</h2>
+                <p>Every installation, product demonstration, and how-to video we&rsquo;ve published &mdash; organized by product type.</p>
+                <a href="https://www.youtube.com/@carolinablinds" target="_blank" rel="noopener" class="btn btn--blue">Carolina Blinds on YouTube &rarr;</a>
+            </div>
+
+            <div style="margin-top: 48px;">
+                <h2 style="text-align: center; margin-bottom: 8px;">Tour Our Showrooms</h2>
+                <p style="text-align: center; color: var(--cb-text-light); margin-bottom: 20px;">Walk through both locations with 150+ functional displays.</p>
+                <div class="tour-grid">
+                    <div>
+                        <h3 style="font-size: 1rem; margin-bottom: 8px;">Hendersonville Showroom</h3>
+                        <div class="tour"><iframe src="https://my.matterport.com/show/?m=9RExUvLjsVa&brand=0" title="Hendersonville showroom virtual tour" loading="lazy" allowfullscreen></iframe></div>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1rem; margin-bottom: 8px;">Weaverville Showroom</h3>
+                        <div class="tour"><iframe src="https://my.matterport.com/show/?m=KJehwKPi2EV" title="Weaverville showroom virtual tour" loading="lazy" allowfullscreen></iframe></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section section--dark"><div class="container">
+        <h2>Ready to Transform Your Home?</h2>
+        <p>Schedule a free in-home consultation. We bring the showroom to you.</p>
+        <div class="cta-section__actions"><a href="/contact" class="btn btn--primary">Schedule Free Consultation</a><a href="tel:828-697-8525" class="btn btn--outline">Call (828) 697-8525</a></div>
+        <div class="cta-section__or">Or visit a showroom: <a href="/areas/hendersonville">Hendersonville</a> &middot; <a href="/areas/weaverville">Weaverville</a></div>
     </div></section>
-    <section class="cta-section section--dark"><div class="container"><h2>Ready to Transform Your Home?</h2><p>Schedule a free in-home consultation.</p><div class="cta-section__actions"><a href="/contact" class="btn btn--primary">Schedule Consultation</a><a href="tel:828-697-8525" class="btn btn--outline">Call (828) 697-8525</a></div></div></section>
-    <footer class="footer">
+<footer class="footer">
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
@@ -109,5 +244,16 @@
             </div>
         </div>
     </footer>
-    <script>document.querySelector('.mobile-toggle').addEventListener('click',function(){var n=document.querySelector('.mobile-nav');if(n)n.classList.toggle('open');else{var m=document.createElement('nav');m.className='mobile-nav open';m.innerHTML='<a href="/">Home</a><a href="/products">Products</a><a href="/areas">Areas We Serve</a><a href="/gallery">Gallery</a><a href="/about">About</a><a href="/contact">Contact</a>';document.querySelector('.header').after(m);}});</script>
+    <script>document.querySelector('.mobile-toggle').addEventListener('click',function(){var n=document.querySelector('.mobile-nav');if(n)n.classList.toggle('open');else{var m=document.createElement('nav');m.className='mobile-nav open';m.innerHTML='<a href="/">Home</a><a href="/products">Products</a><a href="/areas">Areas We Serve</a><a href="/gallery">Gallery</a><a href="/about">About</a><a href="/contact">Contact</a>';document.querySelector('.header').after(m);}});document.querySelectorAll('.faq__question').forEach(function(b){b.addEventListener('click',function(){b.closest('.faq__item').classList.toggle('open');});});</script>
+    <script>
+    function filterGallery(cat) {
+        document.querySelectorAll('.filter-pill').forEach(function(p) { p.classList.remove('active'); });
+        event.target.classList.add('active');
+        document.querySelectorAll('.gallery-section').forEach(function(s) {
+            if (cat === 'all' || s.dataset.category === cat) { s.style.display = ''; }
+            else { s.style.display = 'none'; }
+        });
+    }
+    document.querySelector('.mobile-toggle').addEventListener('click',function(){var n=document.querySelector('.mobile-nav');if(n)n.classList.toggle('open');else{var m=document.createElement('nav');m.className='mobile-nav open';m.innerHTML='<a href="/">Home</a><a href="/products">Products</a><a href="/areas">Areas We Serve</a><a href="/gallery">Gallery</a><a href="/about">About</a><a href="/contact">Contact</a>';document.querySelector('.header').after(m);}});
+    </script>
 </body></html>
