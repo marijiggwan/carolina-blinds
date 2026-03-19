@@ -1,42 +1,72 @@
 # Carolina Blinds — Wix to Netlify 301 Redirects
-# Generated March 2026 | Preserves 7 years of SEO equity
+# Updated March 19, 2026 | Full audit against live Wix sitemap (94 URLs)
 # First match wins — specific rules before wildcards
 
-# === MAIN PAGES ===
+# === MAIN PAGES (24 Wix pages) ===
 /window-covering-brands          /products          301
 /hunter-douglas-gallery           /products          301
 /alta                             /products          301
-/eclipse                          /products          301
+/eclipse                          /products/exterior-shades 301
 /our-window-covering-products     /products          301
 /window-blinds                    /products/blinds   301
 /window-shades                    /products/shades   301
 /window-shutters                  /products/shutters 301
-/specialty-windows                /products/exterior-shades 301
+/specialty-windows                /products/specialty-windows 301
 /powerview                        /products/motorization 301
 /window-solutions                 /products          301
-/energy                           /products/specialty 301
+/energy                           /faq               301
 /free-in-home-consult             /contact           301
 /virtual-home-consultations       /contact           301
 /window-covering-design-blog      /blog              301
-/videos                           /products          301
+/videos                           /gallery           301
 /about-carolina-blinds            /about             301
 /hendersonville-nc-window-coverings /areas/hendersonville 301
 /weaverville-gallery              /areas/weaverville 301
 /promotions                       /                  301
 /contact-carolina-blinds          /contact           301
+/contact-us-confirmation          /thank-you         301
+/shop                             /products          301
+/reviews                          /reviews           301
 /privacy-policy                   /privacy           301
+
+# === PRODUCT PAGES (24 Wix product pages) ===
+# Specific redirects to correct product category page
+/product-page/hunter-douglas-parkland-wood-blinds                    /products/blinds    301
+/product-page/hunter-douglas-everwood-alternative-wood-blinds        /products/blinds    301
+/product-page/hunter-douglas-modern-precious-metals-aluminum-blinds  /products/blinds    301
+/product-page/vertical-solutions-vertical-blinds                     /products/blinds    301
+/product-page/cadence-soft-vertical-blinds                           /products/blinds    301
+/product-page/somner-custom-vertical-blinds                          /products/blinds    301
+/product-page/hunter-douglas-duette-honeycomb-shades                 /products/shades    301
+/product-page/hunter-douglas-sonnette-cellular-roller-shades         /products/shades    301
+/product-page/hunter-douglas-vignette-modern-roman-shades            /products/shades    301
+/product-page/hunter-douglas-designer-roller-shades                  /products/shades    301
+/product-page/hunter-douglas-designer-banded-shades                  /products/shades    301
+/product-page/hunter-douglas-designer-screen-shades                  /products/shades    301
+/product-page/hunter-douglas-silhouette-window-shadings              /products/shades    301
+/product-page/hunter-douglas-pirouette-window-shadings               /products/shades    301
+/product-page/hunter-douglas-luminette-privacy-sheers                /products/shades    301
+/product-page/hunter-douglas-solera-soft-shades                      /products/shades    301
+/product-page/hunter-douglas-design-studio-roman-shades              /products/shades    301
+/product-page/hunter-douglas-provenance-woven-wood-shades            /products/shades    301
+/product-page/hunter-douglas-alustra-woven-textures                  /products/shades    301
+/product-page/hunter-douglas-heritance-hardwood-shutters             /products/shutters  301
+/product-page/hunter-douglas-newstyle-hybrid-shutters                /products/shutters  301
+/product-page/hunter-douglas-palm-beach-polysatin-shutters           /products/shutters  301
+/product-page/automate-your-shades                                   /products/motorization 301
+/product-page/skyline-gliding-window-panels                          /products/shades    301
+# Catch any unlisted product pages
+/product-page/*                   /products          301
 
 # === BLOG CATEGORIES (all → /blog) ===
 /window-covering-design-blog/categories/*  /blog    301
 
 # === BLOG POSTS ===
-# Phase 1: All redirect to /blog
-# Phase 2: Update specific high-value posts to migrated URLs
-# Phase 1 migrated blog posts
+# Migrated posts with specific URLs
 /post/child-safe-window-coverings-a-must-for-families-in-weaverville-nc  /blog/child-safe-window-coverings-weaverville  301
 /post/top-privacy-solutions-for-mountain-living  /blog/privacy-solutions-mountain-living  301
 /post/enhancing-your-mountain-home-custom-window-treatments-for-asheville-s-unique-climate  /blog/custom-window-treatments-asheville  301
 /post/energy-efficient-window-treatments-for-mountain-homes-in-asheville-and-hendersonville-save-on-bills  /blog/energy-efficient-window-treatments-wnc  301
-
-# Remaining blog posts redirect to blog index
+/post/2026-window-treatment-trends-for-asheville-and-hendersonville-homes-embracing-luxury-and-efficiency  /blog/2026-window-treatment-trends  301
+# Remaining blog posts → blog index
 /post/*                           /blog              301
