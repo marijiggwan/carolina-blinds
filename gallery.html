@@ -46,7 +46,7 @@
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="container"><div class="top-bar__phones"><a href="tel:828-697-8525">Hendersonville: (828) 697-8525</a><span>|</span><a href="tel:828-681-0210">Weaverville: (828) 681-0210</a></div><div class="top-bar__badge">Authorized Hunter Douglas Centurion Gallery</div></div></div>
+    <div class="top-bar"><div class="container"><div class="top-bar__phones"><a href="tel:828-697-8525"><span class="top-bar__city">Hendersonville</span><span class="top-bar__num">(828) 697-8525</span></a><span>|</span><a href="tel:828-681-0210"><span class="top-bar__city">Weaverville</span><span class="top-bar__num">(828) 681-0210</span></a></div><div class="top-bar__badge">Authorized Hunter Douglas Centurion Gallery</div></div></div>
     <header class="header"><div class="container">
         <a href="/" class="header__logo"><img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="192" height="72"></a>
         <nav class="header__nav">
@@ -257,8 +257,8 @@
             </div>
         </div>
     </footer>
-    <script>document.querySelector('.mobile-toggle').addEventListener('click',function(){var n=document.querySelector('.mobile-nav');if(n)n.classList.toggle('open');else{var m=document.createElement('nav');m.className='mobile-nav open';m.innerHTML='<a href="/">Home</a><a href="/products">Products</a><a href="/areas">Areas We Serve</a><a href="/gallery">Gallery</a><a href="/about">About</a><a href="/contact">Contact</a>';document.querySelector('.header').after(m);}});document.querySelectorAll('.faq__question').forEach(function(b){b.addEventListener('click',function(){b.closest('.faq__item').classList.toggle('open');});});</script>
     <script>
+    document.querySelector('.mobile-toggle').addEventListener('click',function(){var n=document.querySelector('.mobile-nav');if(n)n.classList.toggle('open');else{var m=document.createElement('nav');m.className='mobile-nav open';m.innerHTML='<a href="/">Home</a><a href="/products">Products</a><a href="/areas">Areas We Serve</a><a href="/gallery">Gallery</a><a href="/about">About</a><a href="/contact">Contact</a>';document.querySelector('.header').after(m);}});
     function filterGallery(cat) {
         document.querySelectorAll('.filter-pill').forEach(function(p) { p.classList.remove('active'); });
         event.target.classList.add('active');
@@ -267,6 +267,5 @@
             else { s.style.display = 'none'; }
         });
     }
-    document.querySelector('.mobile-toggle').addEventListener('click',function(){var n=document.querySelector('.mobile-nav');if(n)n.classList.toggle('open');else{var m=document.createElement('nav');m.className='mobile-nav open';m.innerHTML='<a href="/">Home</a><a href="/products">Products</a><a href="/areas">Areas We Serve</a><a href="/gallery">Gallery</a><a href="/about">About</a><a href="/contact">Contact</a>';document.querySelector('.header').after(m);}});
     </script>
 </body></html>
