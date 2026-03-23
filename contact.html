@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="/css/styles.css">
     <style>
         .hero__bg { background-image: url('/images/hero-default.jpg'); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+        @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
     </style>
 
 </head>
@@ -61,7 +63,7 @@
 
     <section class="section">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+            <div class="contact-grid">
                 <div>
                     <h2>Get In Touch</h2>
                     <p style="color: var(--cb-text-light); margin-bottom: 24px;">Whether you're ready to schedule a consultation or just have a question, we'd love to hear from you.</p>
