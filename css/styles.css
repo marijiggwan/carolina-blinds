@@ -41,6 +41,7 @@ body {
 }
 h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.25; color: var(--cb-blue); }
 img { max-width: 100%; height: auto; display: block; }
+picture { display: contents; }
 a { color: var(--cb-blue-light); text-decoration: none; transition: color 0.2s; }
 a:hover { color: var(--cb-blue); }
 
