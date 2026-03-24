@@ -328,7 +328,7 @@
             var mobileNav = document.createElement('nav');
             mobileNav.className = 'mobile-nav open';
             mobileNav.innerHTML = '<a href="/">Home</a><a href="/products">Products</a><a href="/areas">Areas We Serve</a><a href="/gallery">Gallery</a><a href="/about">About</a><a href="/contact">Contact</a>';
-            document.querySelector('.header').after(mobileNav);
+            document.querySelector('.header').appendChild(mobileNav);
         }
     });
     </script>
