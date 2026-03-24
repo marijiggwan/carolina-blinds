@@ -29,6 +29,8 @@
         .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 24px; }
         .photo-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-sm); cursor: pointer; transition: transform 0.3s; }
         .photo-grid img:hover { transform: scale(1.02); }
+        .photo-grid picture { display: block; overflow: hidden; border-radius: var(--radius-sm); aspect-ratio: 1; }
+        .photo-grid picture img { width: 100%; height: 100%; }
         .video-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 16px 0; }
         .video-row .vid { aspect-ratio: 16/9; border-radius: var(--radius-md); overflow: hidden; }
         .video-row .vid iframe { width: 100%; height: 100%; border: none; }

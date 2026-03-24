@@ -41,7 +41,18 @@ body {
 }
 h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.25; color: var(--cb-blue); }
 img { max-width: 100%; height: auto; display: block; }
-picture { display: contents; }
+
+/* Picture element integration: fill sized containers, act as proper grid children */
+.product-card__img picture,
+.other-card__img picture,
+.type-card__img picture { display: block; width: 100%; height: 100%; }
+
+.why__images picture,
+.intro__gallery picture,
+.gallery__grid picture { display: block; overflow: hidden; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+.why__images picture img,
+.intro__gallery picture img,
+.gallery__grid picture img { width: 100%; height: 100%; object-fit: cover; }
 a { color: var(--cb-blue-light); text-decoration: none; transition: color 0.2s; }
 a:hover { color: var(--cb-blue); }
 
@@ -242,6 +253,8 @@ a:hover { color: var(--cb-blue); }
 .why__images img { border-radius: var(--radius-md); object-fit: cover; width: 100%; box-shadow: var(--shadow-md); }
 .why__images img:first-child { grid-column: 1 / -1; height: 280px; }
 .why__images img:nth-child(2), .why__images img:nth-child(3) { height: 200px; }
+.why__images picture:first-child { grid-column: 1 / -1; height: 280px; }
+.why__images picture:nth-child(2), .why__images picture:nth-child(3) { height: 200px; }
 
 /* ============ EXPERIENCE CARDS ============ */
 .exp__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
@@ -470,6 +483,8 @@ a:hover { color: var(--cb-blue); }
             box-shadow: var(--shadow-sm); }
         .intro__gallery img:first-child {grid-column: 1 / -1;
             height: 260px; }
+        .intro__gallery picture { height: 200px; }
+        .intro__gallery picture:first-child { grid-column: 1 / -1; height: 260px; }
         /* ============================================
            SERVICES
            ============================================ */
@@ -523,6 +538,8 @@ a:hover { color: var(--cb-blue); }
             object-fit: cover;
             width: 100%;
             height: 220px; }
+        .project__images picture { display: block; overflow: hidden; border-radius: var(--radius-md); height: 220px; }
+        .project__images picture img { width: 100%; height: 100%; }
         .project__label {display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -629,6 +646,7 @@ a:hover { color: var(--cb-blue); }
             .services__grid { grid-template-columns: 1fr; }
             .intro__gallery { grid-template-columns: 1fr; }
             .intro__gallery img:first-child { height: 200px; }
+            .intro__gallery picture:first-child { height: 200px; }
             .project__images { grid-template-columns: 1fr; }
         }
         .intro { padding: 72px 0; }
@@ -651,6 +669,8 @@ a:hover { color: var(--cb-blue); }
         .gallery__grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 40px; }
         .gallery__grid img { width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-sm); transition: transform 0.3s; cursor: pointer; }
         .gallery__grid img:hover { transform: scale(1.03); }
+        .gallery__grid picture { height: 200px; border-radius: var(--radius-sm); cursor: pointer; }
+        .gallery__grid picture:hover img { transform: scale(1.03); }
         .gallery__header { text-align: center; }
         .gallery__header h2 { font-size: 1.8rem; margin-bottom: 8px; }
         .gallery__header p { color: var(--cb-text-light); }
