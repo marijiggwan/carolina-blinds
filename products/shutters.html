@@ -14,9 +14,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"></noscript>
     <link rel="stylesheet" href="/css/styles.css">
-    <style>.hero__bg { background-image: url('/images/hero-shutters.jpg'); }</style>
+    <style>.hero__bg { background-image: url('/images/hero-shutters.webp'); }</style>
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XP96GEJS2D"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XP96GEJS2D');</script>
@@ -24,7 +25,10 @@
 <body>
     <div class="top-bar"><div class="container"><div class="top-bar__phones"><a href="tel:828-697-8525"><span class="top-bar__city">Hendersonville</span><span class="top-bar__num">(828) 697-8525</span></a><span>|</span><a href="tel:828-681-0210"><span class="top-bar__city">Weaverville</span><span class="top-bar__num">(828) 681-0210</span></a></div><div class="top-bar__badge">Authorized Hunter Douglas Centurion Gallery</div></div></div>
     <header class="header"><div class="container">
-        <a href="/" class="header__logo"><img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="192" height="72"></a>
+        <a href="/" class="header__logo"><picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
+                    <img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="192" height="72">
+                </picture></a>
         <nav class="header__nav">
                 <a href="/">Home</a>
                 <a href="/products" class="active">Products</a>
@@ -48,28 +52,41 @@
             <div class="types__header"><h2>Types of Shutters We Carry</h2><p>Classic and stylish. The only window treatment that adds permanent architectural value to your home.</p></div>
             <div class="types__grid">
                 <div class="type-card">
-                    <div class="type-card__img"><img src="/images/product-repair.jpg" alt="Hunter Douglas Heritance Hardwood Shutters" loading="lazy"></div>
+                    <div class="type-card__img"><picture>
+                    <source type="image/webp" srcset="/images/product-repair.webp">
+                    <img src="/images/product-repair.jpg" alt="Hunter Douglas Heritance Hardwood Shutters" loading="lazy" width="400" height="400" style="width:100%;height:auto">
+                </picture></div>
                     <div class="type-card__body"><h3>Painted &amp; Stained Wood Shutters</h3><p>Real hardwood shutters with rich natural grain. Available in custom paints and stains to match or complement your existing trim. The premium choice that adds permanent value and timeless elegance.</p>
                         <div class="type-card__tags"><span class="type-card__tag">Real Hardwood</span><span class="type-card__tag">Custom Colors</span><span class="type-card__tag">Permanent Value</span></div>
                         <span class="type-card__best">&#x2605; Featured: Hunter Douglas Heritance&reg; Hardwood Shutters</span>
                     </div>
                 </div>
                 <div class="type-card">
-                    <div class="type-card__img"><img src="/images/hero-shutters.jpg" alt="Hunter Douglas NewStyle Hybrid Shutters" loading="lazy"></div>
+                    <div class="type-card__img"><picture>
+                    <source type="image/webp" srcset="/images/hero-shutters.webp 1920w, /images/hero-shutters-960w.webp 960w, /images/hero-shutters-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/hero-shutters.jpg 1920w, /images/hero-shutters-960w.jpg 960w, /images/hero-shutters-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/hero-shutters.jpg" alt="Hunter Douglas NewStyle Hybrid Shutters" loading="lazy" width="1920" height="900" style="width:100%;height:auto">
+                </picture></div>
                     <div class="type-card__body"><h3>Hybrid &amp; Alternative Wood Shutters</h3><p>The look of real wood with superior moisture and UV resistance. Won't warp, crack, or fade. Ideal for bathrooms, kitchens, and high-humidity areas. Available with hidden tilt or standard tilt bar.</p>
                         <div class="type-card__tags"><span class="type-card__tag">Moisture Resistant</span><span class="type-card__tag">Won't Warp</span><span class="type-card__tag">Low Maintenance</span></div>
                         <span class="type-card__best">&#x2605; Featured: Hunter Douglas NewStyle&reg; Hybrid Shutters</span>
                     </div>
                 </div>
                 <div class="type-card">
-                    <div class="type-card__img"><img src="/images/product-motorization-detail.jpg" alt="Hunter Douglas Palm Beach Polysatin Shutters" loading="lazy"></div>
+                    <div class="type-card__img"><picture>
+                    <source type="image/webp" srcset="/images/product-motorization-detail.webp">
+                    <img src="/images/product-motorization-detail.jpg" alt="Hunter Douglas Palm Beach Polysatin Shutters" loading="lazy" width="400" height="400" style="width:100%;height:auto">
+                </picture></div>
                     <div class="type-card__body"><h3>Polysatin&trade; Shutters</h3><p>Guaranteed against warping, cracking, fading, chipping, peeling, and discoloring regardless of heat or moisture exposure. The most durable shutter option &mdash; perfect for WNC's variable mountain climate.</p>
                         <div class="type-card__tags"><span class="type-card__tag">Guaranteed Durability</span><span class="type-card__tag">UV Resistant</span><span class="type-card__tag">All-Climate</span></div>
                         <span class="type-card__best">&#x2605; Featured: Hunter Douglas Palm Beach&trade; Polysatin Shutters</span>
                     </div>
                 </div>
                 <div class="type-card">
-                    <div class="type-card__img"><img src="/images/archedshutters.jpg" alt="Custom arch shutter installation by Carolina Blinds" loading="lazy"></div>
+                    <div class="type-card__img"><picture>
+                    <source type="image/webp" srcset="/images/archedshutters.webp">
+                    <img src="/images/archedshutters.jpg" alt="Custom arch shutter installation by Carolina Blinds" loading="lazy" width="675" height="900" style="width:100%;height:auto">
+                </picture></div>
                     <div class="type-card__body"><h3>Specialty Shapes</h3><p>Specialty shaped shutters fit arches, circles, triangles, and custom angles &mdash; common in WNC mountain homes. We custom-measure every window to ensure a precision fit, turning challenging windows into beautiful design features.</p>
                         <div class="type-card__tags"><span class="type-card__tag">Arches &amp; Angles</span><span class="type-card__tag">Custom Shapes</span></div>
                         <span class="type-card__best">&#x2605; Best for: Unique windows, street-facing rooms, kitchens</span>
@@ -92,9 +109,18 @@
                     <p>Consider d&eacute;cor and curb appeal, environmental exposure (sun and moisture), and the purpose they'll serve &mdash; privacy, light control, or insulation. Our team will help you choose the right material and configuration during your consultation.</p>
                 </div>
                 <div class="intro__gallery">
-                    <img src="/images/blog-child-safe.jpg" alt="Hunter Douglas Heritance Shutters installed" loading="lazy">
-                    <img src="/images/blog-privacy.jpg" alt="Shutter installation by Carolina Blinds" loading="lazy">
-                    <img src="/images/archedshutters.jpg" alt="Custom arch shutter installation by Carolina Blinds" loading="lazy">
+                    <picture>
+                    <source type="image/webp" srcset="/images/blog-child-safe.webp">
+                    <img src="/images/blog-child-safe.jpg" alt="Hunter Douglas Heritance Shutters installed" loading="lazy" width="800" height="450" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/blog-privacy.webp">
+                    <img src="/images/blog-privacy.jpg" alt="Shutter installation by Carolina Blinds" loading="lazy" width="500" height="400" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/archedshutters.webp">
+                    <img src="/images/archedshutters.jpg" alt="Custom arch shutter installation by Carolina Blinds" loading="lazy" width="675" height="900" style="width:100%;height:auto">
+                </picture>
                 </div>
             </div>
         </div>
@@ -120,7 +146,10 @@
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
+                    <picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
                     <img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="120" height="45">
+                </picture>
                     <p>Western North Carolina's trusted window treatment experts since 1992. Authorized Hunter Douglas Centurion Gallery Dealer with two showrooms and over 150 functional displays.</p>
                     <div class="footer__social" style="margin-top: 16px;">
                         <a href="https://www.facebook.com/carolinablindswnc" aria-label="Facebook" target="_blank" rel="noopener">

@@ -15,7 +15,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"></noscript>
 
     <!-- Schema: Product -->
     <script type="application/ld+json">
@@ -104,7 +105,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <style>
         /* Blinds hero background */
-        .hero__bg { background-image: url('/images/hero-blinds.jpg'); }
+        .hero__bg { background-image: url('/images/hero-blinds.webp'); }
     </style>
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XP96GEJS2D"></script>
@@ -128,7 +129,10 @@
     <header class="header">
         <div class="container">
             <a href="/" class="header__logo">
-                <img src="/images/cb-logo.jpg" alt="Carolina Blinds — Since 1992" width="192" height="72">
+                <picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
+                    <img src="/images/cb-logo.jpg" alt="Carolina Blinds — Since 1992" width="192" height="72">
+                </picture>
             </a>
             <nav class="header__nav">
                 <a href="/">Home</a>
@@ -175,7 +179,10 @@
             <div class="types__grid">
                 <div class="type-card">
                     <div class="type-card__img">
-                        <img src="/images/blinds-parkland-wood.jpg" alt="Hunter Douglas Parkland wood blinds" loading="lazy">
+                        <picture>
+                    <source type="image/webp" srcset="/images/blinds-parkland-wood.webp">
+                    <img src="/images/blinds-parkland-wood.jpg" alt="Hunter Douglas Parkland wood blinds" loading="lazy" width="400" height="400" style="width:100%;height:auto">
+                </picture>
                     </div>
                     <div class="type-card__body">
                         <h3>Wood Blinds</h3>
@@ -193,7 +200,10 @@
                 </div>
                 <div class="type-card">
                     <div class="type-card__img">
-                        <img src="/images/blinds-everwood.jpg" alt="Hunter Douglas EverWood alternative wood blinds" loading="lazy">
+                        <picture>
+                    <source type="image/webp" srcset="/images/blinds-everwood.webp">
+                    <img src="/images/blinds-everwood.jpg" alt="Hunter Douglas EverWood alternative wood blinds" loading="lazy" width="400" height="400" style="width:100%;height:auto">
+                </picture>
                     </div>
                     <div class="type-card__body">
                         <h3>Alternative Wood Blinds</h3>
@@ -211,7 +221,10 @@
                 </div>
                 <div class="type-card">
                     <div class="type-card__img">
-                        <img src="/images/product-exterior-detail.jpg" alt="Aluminum metal blinds" loading="lazy">
+                        <picture>
+                    <source type="image/webp" srcset="/images/product-exterior-detail.webp">
+                    <img src="/images/product-exterior-detail.jpg" alt="Aluminum metal blinds" loading="lazy" width="400" height="400" style="width:100%;height:auto">
+                </picture>
                     </div>
                     <div class="type-card__body">
                         <h3>Aluminum (Metal) Blinds</h3>
@@ -229,7 +242,10 @@
                 </div>
                 <div class="type-card">
                     <div class="type-card__img">
-                        <img src="/images/blinds-vertical.jpg" alt="Hunter Douglas Vertical Solutions vertical blinds" loading="lazy">
+                        <picture>
+                    <source type="image/webp" srcset="/images/blinds-vertical.webp">
+                    <img src="/images/blinds-vertical.jpg" alt="Hunter Douglas Vertical Solutions vertical blinds" loading="lazy" width="800" height="400" style="width:100%;height:auto">
+                </picture>
                     </div>
                     <div class="type-card__body">
                         <h3>Vertical & Track Blinds</h3>
@@ -326,7 +342,10 @@
                         </p>
                     </div>
                     <div style="margin-top: 24px;">
-                        <img src="/images/product-blinds-room.jpg" alt="Blind installation example by Carolina Blinds" style="border-radius: var(--radius-md); box-shadow: var(--shadow-md);" loading="lazy">
+                        <picture>
+                    <source type="image/webp" srcset="/images/product-blinds-room.webp">
+                    <img src="/images/product-blinds-room.jpg" alt="Blind installation example by Carolina Blinds" style="border-radius: var(--radius-md); box-shadow: var(--shadow-md);" loading="lazy" width="600" height="450">
+                </picture>
                     </div>
                 </div>
             </div>
@@ -374,11 +393,27 @@
                 <p>Real projects from real WNC homes — installed by our team, not subcontractors.</p>
             </div>
             <div class="gallery__grid">
-                <img src="/images/hero-motorization.jpg" alt="VertiGlide blind installation" loading="lazy">
-                <img src="/images/blinds-vertical.jpg" alt="Hunter Douglas Vertical Solutions blinds for sliding doors" loading="lazy">
-                <img src="/images/product-shutters-room.jpg" alt="Custom blinds in WNC home" loading="lazy">
-                <img src="/images/product-exterior-room.jpg" alt="Blinds installed in mountain home" loading="lazy">
-                <img src="/images/product-blinds-room.jpg" alt="Blind installation example" loading="lazy">
+                <picture>
+                    <source type="image/webp" srcset="/images/hero-motorization.webp 1920w, /images/hero-motorization-960w.webp 960w, /images/hero-motorization-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/hero-motorization.jpg 1920w, /images/hero-motorization-960w.jpg 960w, /images/hero-motorization-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/hero-motorization.jpg" alt="VertiGlide blind installation" loading="lazy" width="1920" height="900" style="width:100%;height:auto">
+                </picture>
+                <picture>
+                    <source type="image/webp" srcset="/images/blinds-vertical.webp">
+                    <img src="/images/blinds-vertical.jpg" alt="Hunter Douglas Vertical Solutions blinds for sliding doors" loading="lazy" width="800" height="400" style="width:100%;height:auto">
+                </picture>
+                <picture>
+                    <source type="image/webp" srcset="/images/product-shutters-room.webp">
+                    <img src="/images/product-shutters-room.jpg" alt="Custom blinds in WNC home" loading="lazy" width="600" height="450" style="width:100%;height:auto">
+                </picture>
+                <picture>
+                    <source type="image/webp" srcset="/images/product-exterior-room.webp">
+                    <img src="/images/product-exterior-room.jpg" alt="Blinds installed in mountain home" loading="lazy" width="500" height="320" style="width:100%;height:auto">
+                </picture>
+                <picture>
+                    <source type="image/webp" srcset="/images/product-blinds-room.webp">
+                    <img src="/images/product-blinds-room.jpg" alt="Blind installation example" loading="lazy" width="600" height="450" style="width:100%;height:auto">
+                </picture>
                 <div class="gallery__placeholder">
                     <strong>📷 For production:</strong> Replace and expand with Wayne's actual installation photos. Before/after pairs with city and product details perform best for SEO and conversion.
                 </div>
@@ -396,7 +431,10 @@
             <div class="brands__grid" style="grid-template-columns: repeat(2, 1fr); max-width: 800px; margin-left: auto; margin-right: auto; margin-top: 40px;">
                 <div class="brand-card brand-card--featured">
                     <span class="brand-card__badge">Centurion Gallery Dealer</span>
-                    <img src="/images/hd-gallery-logo.png" alt="Hunter Douglas Gallery logo" style="margin: 12px 0;">
+                    <picture>
+                    <source type="image/webp" srcset="/images/hd-gallery-logo.webp">
+                    <img src="/images/hd-gallery-logo.png" alt="Hunter Douglas Gallery logo" style="margin: 12px 0;" width="240" height="36">
+                </picture>
                     <p>The industry leader in premium window coverings for over 100 years. Hunter Douglas blinds are engineered for superior light control, durability, and design — with exclusive features like the LiteRise&reg; cordless lift, the SimpleLift&trade; system, and the PowerView&reg; motorization platform for smart-home integration. Every product is backed by a lifetime limited warranty. As a Centurion Gallery dealer, Carolina Blinds carries the full Hunter Douglas blinds collection with over 150 showroom displays.</p>
                     <div class="brand-card__products">Parkland&reg; Wood Blinds &middot; EverWood&reg; Alternative Wood Blinds &middot; Modern Precious Metals&reg; Aluminum Blinds &middot; Vertical Solutions&reg; Vertical Blinds &middot; Skyline&reg; Gliding Window Panels</div>
                 </div>
@@ -476,7 +514,10 @@
             <div class="other__grid">
                 <a href="/products/shades" class="other-card">
                     <div class="other-card__img">
-                        <img src="/images/product-specialty-detail.jpg" alt="Custom shades" loading="lazy">
+                        <picture>
+                    <source type="image/webp" srcset="/images/product-specialty-detail.webp">
+                    <img src="/images/product-specialty-detail.jpg" alt="Custom shades" loading="lazy" width="500" height="320" style="width:100%;height:auto">
+                </picture>
                     </div>
                     <div class="other-card__body">
                         <h3>Custom Shades</h3>
@@ -486,7 +527,10 @@
                 </a>
                 <a href="/products/shutters" class="other-card">
                     <div class="other-card__img">
-                        <img src="/images/product-exterior-room.jpg" alt="Custom shutters" loading="lazy">
+                        <picture>
+                    <source type="image/webp" srcset="/images/product-exterior-room.webp">
+                    <img src="/images/product-exterior-room.jpg" alt="Custom shutters" loading="lazy" width="500" height="320" style="width:100%;height:auto">
+                </picture>
                     </div>
                     <div class="other-card__body">
                         <h3>Custom Shutters</h3>
@@ -496,7 +540,11 @@
                 </a>
                 <a href="/products/motorization" class="other-card">
                     <div class="other-card__img">
-                        <img src="/images/hero-motorization.jpg" alt="Motorized window treatments" loading="lazy">
+                        <picture>
+                    <source type="image/webp" srcset="/images/hero-motorization.webp 1920w, /images/hero-motorization-960w.webp 960w, /images/hero-motorization-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/hero-motorization.jpg 1920w, /images/hero-motorization-960w.jpg 960w, /images/hero-motorization-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/hero-motorization.jpg" alt="Motorized window treatments" loading="lazy" width="1920" height="900" style="width:100%;height:auto">
+                </picture>
                     </div>
                     <div class="other-card__body">
                         <h3>Motorization & Smart Home</h3>
@@ -531,7 +579,10 @@
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
+                    <picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
                     <img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="120" height="45">
+                </picture>
                     <p>Western North Carolina's trusted window treatment experts since 1992. Authorized Hunter Douglas Centurion Gallery Dealer with two showrooms and over 150 functional displays.</p>
                     <div class="footer__social" style="margin-top: 16px;">
                         <a href="https://www.facebook.com/carolinablindswnc" aria-label="Facebook" target="_blank" rel="noopener">

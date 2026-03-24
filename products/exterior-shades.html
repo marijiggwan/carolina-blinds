@@ -14,17 +14,58 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"></noscript>
     <link rel="stylesheet" href="/css/styles.css">
-    <style>.hero__bg { background-image: url('/images/hero-default.jpg'); }</style>
+    <style>.hero__bg { background-image: url('/images/hero-default.webp'); }</style>
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XP96GEJS2D"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XP96GEJS2D');</script>
+
+    <!-- Lite YouTube Facade -->
+    <style>
+        .lite-yt { cursor: pointer; position: relative; width: 100%; height: 100%; }
+        .lite-yt img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .lite-yt__play {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            z-index: 2; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+            transition: filter 0.15s;
+        }
+        .lite-yt:hover .lite-yt__play { filter: drop-shadow(0 2px 12px rgba(0,0,0,0.6)) brightness(1.1); }
+        .lite-yt.activated { cursor: default; }
+        .lite-yt.activated .lite-yt__play,
+        .lite-yt.activated > picture,
+        .lite-yt.activated > img { display: none; }
+        .lite-yt iframe {
+            width: 100%; height: 100%; border: none;
+            position: absolute; top: 0; left: 0; z-index: 3;
+        }
+    </style>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.lite-yt').forEach(function(el) {
+            el.addEventListener('click', function() {
+                if (el.classList.contains('activated')) return;
+                var id = el.dataset.videoid;
+                var iframe = document.createElement('iframe');
+                iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1';
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                iframe.allowFullscreen = true;
+                el.appendChild(iframe);
+                el.classList.add('activated');
+            });
+        });
+    });
+    </script>
+
 </head>
 <body>
     <div class="top-bar"><div class="container"><div class="top-bar__phones"><a href="tel:828-697-8525"><span class="top-bar__city">Hendersonville</span><span class="top-bar__num">(828) 697-8525</span></a><span>|</span><a href="tel:828-681-0210"><span class="top-bar__city">Weaverville</span><span class="top-bar__num">(828) 681-0210</span></a></div><div class="top-bar__badge">Authorized Hunter Douglas Centurion Gallery</div></div></div>
     <header class="header"><div class="container">
-        <a href="/" class="header__logo"><img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="192" height="72"></a>
+        <a href="/" class="header__logo"><picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
+                    <img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="192" height="72">
+                </picture></a>
         <nav class="header__nav">
                 <a href="/">Home</a>
                 <a href="/products" class="active">Products</a>
@@ -62,10 +103,22 @@
                 </div>
                 <div class="intro__gallery">
                     <div style="aspect-ratio: 16/9; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md);">
-                        <iframe src="https://www.youtube.com/embed/TLMu55ijYfQ?rel=0" title="E-Zip Shades installation by Carolina Blinds" loading="lazy" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>
+                        <div class="lite-yt" data-videoid="TLMu55ijYfQ" tabindex="0" role="button" aria-label="Play: E-Zip Shades installation by Carolina Blinds">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/TLMu55ijYfQ/hqdefault.webp">
+                            <img src="https://img.youtube.com/vi/TLMu55ijYfQ/hqdefault.jpg" alt="E-Zip Shades installation by Carolina Blinds" loading="lazy" width="480" height="360">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true"><svg height="54" width="54" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></div>
+                    </div>
                     </div>
                     <div style="aspect-ratio: 16/9; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md);">
-                        <iframe src="https://www.youtube.com/embed/479trXndYqU?rel=0" title="How to reduce glare with E-Zip Shades" loading="lazy" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>
+                        <div class="lite-yt" data-videoid="479trXndYqU" tabindex="0" role="button" aria-label="Play: How to reduce glare with E-Zip Shades">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/479trXndYqU/hqdefault.webp">
+                            <img src="https://img.youtube.com/vi/479trXndYqU/hqdefault.jpg" alt="How to reduce glare with E-Zip Shades" loading="lazy" width="480" height="360">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true"><svg height="54" width="54" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -80,10 +133,22 @@
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; margin: 0 auto;">
                 <div style="aspect-ratio: 16/9; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md);">
-                    <iframe src="https://www.youtube.com/embed/brfZDjeW7Ag?rel=0" title="24 feet wide E-Zip Shades installation" loading="lazy" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>
+                    <div class="lite-yt" data-videoid="brfZDjeW7Ag" tabindex="0" role="button" aria-label="Play: 24 feet wide E-Zip Shades installation">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/brfZDjeW7Ag/hqdefault.webp">
+                            <img src="https://img.youtube.com/vi/brfZDjeW7Ag/hqdefault.jpg" alt="24 feet wide E-Zip Shades installation" loading="lazy" width="480" height="360">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true"><svg height="54" width="54" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></div>
+                    </div>
                 </div>
                 <div style="aspect-ratio: 16/9; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md);">
-                    <iframe src="https://www.youtube.com/embed/Tkq2N3uTI-c?rel=0" title="Protect your deck from sun and heat" loading="lazy" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>
+                    <div class="lite-yt" data-videoid="Tkq2N3uTI-c" tabindex="0" role="button" aria-label="Play: Protect your deck from sun and heat">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/Tkq2N3uTI-c/hqdefault.webp">
+                            <img src="https://img.youtube.com/vi/Tkq2N3uTI-c/hqdefault.jpg" alt="Protect your deck from sun and heat" loading="lazy" width="480" height="360">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true"><svg height="54" width="54" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -112,7 +177,10 @@
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
+                    <picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
                     <img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="120" height="45">
+                </picture>
                     <p>Western North Carolina's trusted window treatment experts since 1992. Authorized Hunter Douglas Centurion Gallery Dealer with two showrooms and over 150 functional displays.</p>
                     <div class="footer__social" style="margin-top: 16px;">
                         <a href="https://www.facebook.com/carolinablindswnc" aria-label="Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>

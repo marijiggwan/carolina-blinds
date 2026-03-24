@@ -17,7 +17,8 @@
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"></noscript>
 
     <!-- Schema Markup: LocalBusiness -->
     <script type="application/ld+json">
@@ -171,7 +172,10 @@
     <header class="header">
         <div class="container">
             <a href="/" class="header__logo">
-                <img src="/images/cb-logo.jpg" alt="Carolina Blinds — Since 1992" width="192" height="72">
+                <picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
+                    <img src="/images/cb-logo.jpg" alt="Carolina Blinds — Since 1992" width="192" height="72">
+                </picture>
             </a>
             <nav class="header__nav">
                 <a href="/">Home</a>
@@ -243,9 +247,19 @@
                     <p>Whether you’re in a compact downtown condo or a 5,000 square foot mountain estate, our team has seen it all and solved it all. No subcontractors — our installers are Carolina Blinds employees who take pride in precision work.</p>
                 </div>
                 <div class="intro__gallery">
-                    <img src="/images/hero-default.jpg" alt="Carolina Blinds Hendersonville showroom interior" loading="lazy">
-                    <img src="/images/showroom-interior.jpg" alt="Carolina Blinds team" loading="lazy">
-                    <img src="/images/showroom-displays.jpg" alt="Window treatment installation in Hendersonville" loading="lazy">
+                    <picture>
+                    <source type="image/webp" srcset="/images/hero-default.webp 1920w, /images/hero-default-960w.webp 960w, /images/hero-default-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/hero-default.jpg 1920w, /images/hero-default-960w.jpg 960w, /images/hero-default-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/hero-default.jpg" alt="Carolina Blinds Hendersonville showroom interior" loading="lazy" width="1920" height="900" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/showroom-interior.webp">
+                    <img src="/images/showroom-interior.jpg" alt="Carolina Blinds team" loading="lazy" width="500" height="400" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/showroom-displays.webp">
+                    <img src="/images/showroom-displays.jpg" alt="Window treatment installation in Hendersonville" loading="lazy" width="500" height="400" style="width:100%;height:auto">
+                </picture>
                 </div>
             </div>
         </div>
@@ -320,10 +334,23 @@
         <div class="container">
             <div class="project__grid">
                 <div class="project__images">
-                    <img src="/images/hero-motorization.jpg" alt="VertiGlide installation by Carolina Blinds" loading="lazy">
-                    <img src="/images/product-shades-room.jpg" alt="Sliding door blinds installation Hendersonville" loading="lazy">
-                    <img src="/images/product-shutters-room.jpg" alt="Custom blinds installation WNC" loading="lazy">
-                    <img src="/images/product-blinds-room.jpg" alt="Window treatment installation example" loading="lazy">
+                    <picture>
+                    <source type="image/webp" srcset="/images/hero-motorization.webp 1920w, /images/hero-motorization-960w.webp 960w, /images/hero-motorization-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/hero-motorization.jpg 1920w, /images/hero-motorization-960w.jpg 960w, /images/hero-motorization-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/hero-motorization.jpg" alt="VertiGlide installation by Carolina Blinds" loading="lazy" width="1920" height="900" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/product-shades-room.webp">
+                    <img src="/images/product-shades-room.jpg" alt="Sliding door blinds installation Hendersonville" loading="lazy" width="600" height="450" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/product-shutters-room.webp">
+                    <img src="/images/product-shutters-room.jpg" alt="Custom blinds installation WNC" loading="lazy" width="600" height="450" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/product-blinds-room.webp">
+                    <img src="/images/product-blinds-room.jpg" alt="Window treatment installation example" loading="lazy" width="600" height="450" style="width:100%;height:auto">
+                </picture>
                 </div>
                 <div class="project__content">
                     <span class="project__label">Featured Project</span>
@@ -544,7 +571,10 @@
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
+                    <picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
                     <img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="120" height="45">
+                </picture>
                     <p>Western North Carolina's trusted window treatment experts since 1992. Authorized Hunter Douglas Centurion Gallery Dealer with two showrooms and over 150 functional displays.</p>
                     <div class="footer__social" style="margin-top: 16px;">
                         <a href="https://www.facebook.com/carolinablindswnc" aria-label="Facebook" target="_blank" rel="noopener">

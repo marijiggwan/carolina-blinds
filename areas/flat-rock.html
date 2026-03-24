@@ -15,7 +15,8 @@
     <meta name="keywords" content="window blinds flat rock nc, custom blinds flat rock, window treatments flat rock, hunter douglas flat rock, blinds near me flat rock">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"></noscript>
     <link rel="stylesheet" href="/css/styles.css">
     <script type="application/ld+json">
     {
@@ -41,7 +42,7 @@
         ]
     }
     </script>
-    <style>.hero__bg { background-image: url('/images/hero-default.jpg'); }</style>
+    <style>.hero__bg { background-image: url('/images/hero-default.webp'); }</style>
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XP96GEJS2D"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XP96GEJS2D');</script>
@@ -49,7 +50,10 @@
 <body>
     <div class="top-bar"><div class="container"><div class="top-bar__phones"><a href="tel:828-697-8525"><span class="top-bar__city">Hendersonville</span><span class="top-bar__num">(828) 697-8525</span></a><span>|</span><a href="tel:828-681-0210"><span class="top-bar__city">Weaverville</span><span class="top-bar__num">(828) 681-0210</span></a></div><div class="top-bar__badge">Authorized Hunter Douglas Centurion Gallery</div></div></div>
     <header class="header"><div class="container">
-        <a href="/" class="header__logo"><img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="192" height="72"></a>
+        <a href="/" class="header__logo"><picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
+                    <img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="192" height="72">
+                </picture></a>
         <nav class="header__nav">
                 <a href="/">Home</a>
                 <a href="/products">Products</a>
@@ -91,8 +95,15 @@
                     <p>Our Hendersonville showroom is just minutes away on US-25, with 150+ functional displays. Or schedule a free in-home consultation and we&rsquo;ll bring samples directly to you.</p>
                 </div>
                 <div class="intro__gallery">
-                    <img src="/images/hero-default.jpg" alt="Carolina Blinds showroom displays" loading="lazy">
-                    <img src="/images/showroom-interior.jpg" alt="Carolina Blinds team" loading="lazy">
+                    <picture>
+                    <source type="image/webp" srcset="/images/hero-default.webp 1920w, /images/hero-default-960w.webp 960w, /images/hero-default-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/hero-default.jpg 1920w, /images/hero-default-960w.jpg 960w, /images/hero-default-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/hero-default.jpg" alt="Carolina Blinds showroom displays" loading="lazy" width="1920" height="900" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/showroom-interior.webp">
+                    <img src="/images/showroom-interior.jpg" alt="Carolina Blinds team" loading="lazy" width="500" height="400" style="width:100%;height:auto">
+                </picture>
                 </div>
             </div>
         </div>
@@ -178,7 +189,10 @@
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
+                    <picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
                     <img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="120" height="45">
+                </picture>
                     <p>Western North Carolina's trusted window treatment experts since 1992. Authorized Hunter Douglas Centurion Gallery Dealer with two showrooms and over 150 functional displays.</p>
                     <div class="footer__social" style="margin-top: 16px;">
                         <a href="https://www.facebook.com/carolinablindswnc" aria-label="Facebook" target="_blank" rel="noopener">

@@ -14,10 +14,11 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"></noscript>
     <link rel="stylesheet" href="/css/styles.css">
     <style>
-        .hero__bg { background-image: url('/images/hero-default.jpg'); }
+        .hero__bg { background-image: url('/images/hero-default.webp'); }
     </style>
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XP96GEJS2D"></script>
@@ -37,7 +38,10 @@
     <header class="header">
         <div class="container">
             <a href="/" class="header__logo">
-                <img src="/images/cb-logo.jpg" alt="Carolina Blinds — Since 1992" width="192" height="72">
+                <picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
+                    <img src="/images/cb-logo.jpg" alt="Carolina Blinds — Since 1992" width="192" height="72">
+                </picture>
             </a>
             <nav class="header__nav">
                 <a href="/">Home</a>
@@ -74,7 +78,11 @@
             <div class="products__grid">
                 <a href="/products/blinds" class="product-card">
                     <div class="product-card__img">
-                        <img src="/images/hub-blinds.jpg" alt="Hunter Douglas Parkland real wood blinds in a sunlit room" loading="lazy">
+                        <picture>
+                    <source type="image/webp" srcset="/images/hub-blinds.webp 1920w, /images/hub-blinds-960w.webp 960w, /images/hub-blinds-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/hub-blinds.jpg 1920w, /images/hub-blinds-960w.jpg 960w, /images/hub-blinds-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/hub-blinds.jpg" alt="Hunter Douglas Parkland real wood blinds in a sunlit room" loading="lazy" width="2050" height="1025" style="width:100%;height:auto">
+                </picture>
                     </div>
                     <div class="product-card__body">
                         <h3>Blinds</h3>
@@ -84,7 +92,11 @@
                 </a>
                 <a href="/products/shades" class="product-card">
                     <div class="product-card__img">
-                        <img src="/images/hub-shades.jpg" alt="Custom window shades" loading="lazy">
+                        <picture>
+                    <source type="image/webp" srcset="/images/hub-shades.webp 1920w, /images/hub-shades-960w.webp 960w, /images/hub-shades-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/hub-shades.jpg 1920w, /images/hub-shades-960w.jpg 960w, /images/hub-shades-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/hub-shades.jpg" alt="Custom window shades" loading="lazy" width="2050" height="1025" style="width:100%;height:auto">
+                </picture>
                     </div>
                     <div class="product-card__body">
                         <h3>Shades</h3>
@@ -94,7 +106,11 @@
                 </a>
                 <a href="/products/shutters" class="product-card">
                     <div class="product-card__img">
-                        <img src="/images/hub-shutters.jpg" alt="Custom plantation shutters" loading="lazy">
+                        <picture>
+                    <source type="image/webp" srcset="/images/hub-shutters.webp 1920w, /images/hub-shutters-960w.webp 960w, /images/hub-shutters-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/hub-shutters.jpg 1920w, /images/hub-shutters-960w.jpg 960w, /images/hub-shutters-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/hub-shutters.jpg" alt="Custom plantation shutters" loading="lazy" width="1920" height="959" style="width:100%;height:auto">
+                </picture>
                     </div>
                     <div class="product-card__body">
                         <h3>Shutters</h3>
@@ -104,7 +120,11 @@
                 </a>
                 <a href="/products/motorization" class="product-card">
                     <div class="product-card__img">
-                        <img src="/images/motorization-powerview.jpg" alt="Hunter Douglas PowerView Pebble remote for motorized window treatments" loading="lazy">
+                        <picture>
+                    <source type="image/webp" srcset="/images/motorization-powerview.webp 1920w, /images/motorization-powerview-960w.webp 960w, /images/motorization-powerview-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/motorization-powerview.jpg 1920w, /images/motorization-powerview-960w.jpg 960w, /images/motorization-powerview-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/motorization-powerview.jpg" alt="Hunter Douglas PowerView Pebble remote for motorized window treatments" loading="lazy" width="1200" height="800" style="width:100%;height:auto">
+                </picture>
                     </div>
                     <div class="product-card__body">
                         <h3>Motorization</h3>
@@ -114,7 +134,11 @@
                 </a>
                 <a href="/products/exterior-shades" class="product-card">
                     <div class="product-card__img">
-                        <img src="/images/exterior-shades.jpg" alt="Commercial exterior retractable shades on restaurant patio in Western North Carolina" loading="lazy">
+                        <picture>
+                    <source type="image/webp" srcset="/images/exterior-shades.webp 1920w, /images/exterior-shades-960w.webp 960w, /images/exterior-shades-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/exterior-shades.jpg 1920w, /images/exterior-shades-960w.jpg 960w, /images/exterior-shades-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/exterior-shades.jpg" alt="Commercial exterior retractable shades on restaurant patio in Western North Carolina" loading="lazy" width="1280" height="591" style="width:100%;height:auto">
+                </picture>
                     </div>
                     <div class="product-card__body">
                         <h3>Exterior Shades</h3>
@@ -124,7 +148,11 @@
                 </a>
                 <a href="/products/specialty-windows" class="product-card">
                     <div class="product-card__img">
-                        <img src="/images/specialty-windows.jpg" alt="Cathedral and specialty shaped windows in WNC mountain home" loading="lazy">
+                        <picture>
+                    <source type="image/webp" srcset="/images/specialty-windows.webp 1920w, /images/specialty-windows-960w.webp 960w, /images/specialty-windows-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/specialty-windows.jpg 1920w, /images/specialty-windows-960w.jpg 960w, /images/specialty-windows-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/specialty-windows.jpg" alt="Cathedral and specialty shaped windows in WNC mountain home" loading="lazy" width="1280" height="720" style="width:100%;height:auto">
+                </picture>
                     </div>
                     <div class="product-card__body">
                         <h3>Specialty Windows</h3>
@@ -182,9 +210,19 @@
                     </div>
                 </div>
                 <div class="why__images">
-                    <img src="/images/hero-default.jpg" alt="Carolina Blinds showroom" loading="lazy">
-                    <img src="/images/showroom-interior.jpg" alt="Carolina Blinds team" loading="lazy">
-                    <img src="/images/showroom-displays.jpg" alt="Installation" loading="lazy">
+                    <picture>
+                    <source type="image/webp" srcset="/images/hero-default.webp 1920w, /images/hero-default-960w.webp 960w, /images/hero-default-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/hero-default.jpg 1920w, /images/hero-default-960w.jpg 960w, /images/hero-default-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/hero-default.jpg" alt="Carolina Blinds showroom" loading="lazy" width="1920" height="900" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/showroom-interior.webp">
+                    <img src="/images/showroom-interior.jpg" alt="Carolina Blinds team" loading="lazy" width="500" height="400" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/showroom-displays.webp">
+                    <img src="/images/showroom-displays.jpg" alt="Installation" loading="lazy" width="500" height="400" style="width:100%;height:auto">
+                </picture>
                 </div>
             </div>
         </div>
@@ -195,7 +233,10 @@
             <h2 style="font-size: 1.6rem; margin-bottom: 8px;">Brands We Carry</h2>
             <p style="color: var(--cb-text-light); margin-bottom: 32px;">Premium window treatment brands including our featured Hunter Douglas Gallery collection.</p>
             <div style="display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; opacity: 0.7;">
-                <img src="/images/hd-gallery-logo.png" alt="Hunter Douglas Gallery" style="height: 32px; width: auto;">
+                <picture>
+                    <source type="image/webp" srcset="/images/hd-gallery-logo.webp">
+                    <img src="/images/hd-gallery-logo.png" alt="Hunter Douglas Gallery" style="height: 32px; width: auto;">
+                </picture>
                 <span style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 22px; color: var(--cb-text); letter-spacing: 2px;">ALTA</span>
                 <span style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 22px; color: var(--cb-text); letter-spacing: 2px;">ECLIPSE</span>
                             </div>
@@ -220,7 +261,10 @@
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
+                    <picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
                     <img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="120" height="45">
+                </picture>
                     <p>Western North Carolina's trusted window treatment experts since 1992. Authorized Hunter Douglas Centurion Gallery Dealer with two showrooms and over 150 functional displays.</p>
                     <div class="footer__social" style="margin-top: 16px;">
                         <a href="https://www.facebook.com/carolinablindswnc" aria-label="Facebook" target="_blank" rel="noopener">

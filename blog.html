@@ -14,9 +14,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"></noscript>
     <link rel="stylesheet" href="/css/styles.css">
-    <style>.hero__bg { background-image: url('/images/hero-default.jpg'); }</style>
+    <style>.hero__bg { background-image: url('/images/hero-default.webp'); }</style>
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XP96GEJS2D"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XP96GEJS2D');</script>
@@ -24,7 +25,10 @@
 <body>
     <div class="top-bar"><div class="container"><div class="top-bar__phones"><a href="tel:828-697-8525"><span class="top-bar__city">Hendersonville</span><span class="top-bar__num">(828) 697-8525</span></a><span>|</span><a href="tel:828-681-0210"><span class="top-bar__city">Weaverville</span><span class="top-bar__num">(828) 681-0210</span></a></div><div class="top-bar__badge">Authorized Hunter Douglas Centurion Gallery</div></div></div>
     <header class="header"><div class="container">
-        <a href="/" class="header__logo"><img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="192" height="72"></a>
+        <a href="/" class="header__logo"><picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
+                    <img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="192" height="72">
+                </picture></a>
         <nav class="header__nav">
                 <a href="/">Home</a>
                 <a href="/products">Products</a>
@@ -45,16 +49,31 @@
     <section class="section"><div class="container"><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:32px;">
 <a href="/blog/child-safe-window-coverings-weaverville" style="text-decoration:none;color:var(--cb-text);"><div class="product-card"><div class="product-card__img"><img src="https://i.ytimg.com/vi/eYTJ_74Oj98/maxresdefault.jpg" alt="Child-Safe Window Coverings: A Must for Families in Weaverville, NC" loading="lazy"></div><div class="product-card__body"><p style="font-size:13px;color:var(--cb-text-muted);margin-bottom:4px;">Feb 10, 2026</p><h2 style="font-size:1.15rem;margin:0;">Child-Safe Window Coverings: A Must for Families in Weaverville, NC</h2><p>Cordless alternatives that protect children and pets.</p></div></div></a>
 <a href="/blog/privacy-solutions-mountain-living" style="text-decoration:none;color:var(--cb-text);"><div class="product-card"><div class="product-card__img"><img src="https://i.ytimg.com/vi/fKSqOChpUa0/maxresdefault.jpg" alt="Top Privacy Solutions for Mountain Living in Hendersonville, NC" loading="lazy"></div><div class="product-card__body"><p style="font-size:13px;color:var(--cb-text-muted);margin-bottom:4px;">Feb 2, 2026</p><h2 style="font-size:1.15rem;margin:0;">Top Privacy Solutions for Mountain Living in Hendersonville, NC</h2><p>Custom privacy solutions that preserve mountain vistas.</p></div></div></a>
-<a href="/blog/custom-window-treatments-asheville" style="text-decoration:none;color:var(--cb-text);"><div class="product-card"><div class="product-card__img"><img src="/images/blog-custom-asheville.jpg" alt="Custom Window Treatments for Asheville's Unique Climate" loading="lazy"></div><div class="product-card__body"><p style="font-size:13px;color:var(--cb-text-muted);margin-bottom:4px;">Jan 27, 2026</p><h2 style="font-size:1.15rem;margin:0;">Custom Window Treatments for Asheville's Unique Climate</h2><p>Balancing aesthetics, functionality, and durability for mountain living.</p></div></div></a>
-<a href="/blog/energy-efficient-window-treatments-wnc" style="text-decoration:none;color:var(--cb-text);"><div class="product-card"><div class="product-card__img"><img src="/images/blog-energy-efficient.jpg" alt="Energy-Efficient Window Treatments: Save on Bills Year-Round" loading="lazy"></div><div class="product-card__body"><p style="font-size:13px;color:var(--cb-text-muted);margin-bottom:4px;">Jan 19, 2026</p><h2 style="font-size:1.15rem;margin:0;">Energy-Efficient Window Treatments: Save on Bills Year-Round</h2><p>Cellular shades reduce energy costs by up to 40%.</p></div></div></a>
-<a href="/blog/2026-window-treatment-trends" style="text-decoration:none;color:var(--cb-text);"><div class="product-card"><div class="product-card__img"><img src="/images/blog-2026-trends.jpg" alt="2026 Window Treatment Trends for Asheville and Hendersonville" loading="lazy"></div><div class="product-card__body"><p style="font-size:13px;color:var(--cb-text-muted);margin-bottom:4px;">Jan 12, 2026</p><h2 style="font-size:1.15rem;margin:0;">2026 Window Treatment Trends for Asheville and Hendersonville</h2><p>Smart motorization, natural materials, and sustainability.</p></div></div></a>
+<a href="/blog/custom-window-treatments-asheville" style="text-decoration:none;color:var(--cb-text);"><div class="product-card"><div class="product-card__img"><picture>
+                    <source type="image/webp" srcset="/images/blog-custom-asheville.webp 1920w, /images/blog-custom-asheville-960w.webp 960w, /images/blog-custom-asheville-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/blog-custom-asheville.jpg 1920w, /images/blog-custom-asheville-960w.jpg 960w, /images/blog-custom-asheville-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/blog-custom-asheville.jpg" alt="Custom Window Treatments for Asheville's Unique Climate" loading="lazy" width="1920" height="900" style="width:100%;height:auto">
+                </picture></div><div class="product-card__body"><p style="font-size:13px;color:var(--cb-text-muted);margin-bottom:4px;">Jan 27, 2026</p><h2 style="font-size:1.15rem;margin:0;">Custom Window Treatments for Asheville's Unique Climate</h2><p>Balancing aesthetics, functionality, and durability for mountain living.</p></div></div></a>
+<a href="/blog/energy-efficient-window-treatments-wnc" style="text-decoration:none;color:var(--cb-text);"><div class="product-card"><div class="product-card__img"><picture>
+                    <source type="image/webp" srcset="/images/blog-energy-efficient.webp 1920w, /images/blog-energy-efficient-960w.webp 960w, /images/blog-energy-efficient-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/blog-energy-efficient.jpg 1920w, /images/blog-energy-efficient-960w.jpg 960w, /images/blog-energy-efficient-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/blog-energy-efficient.jpg" alt="Energy-Efficient Window Treatments: Save on Bills Year-Round" loading="lazy" width="1920" height="900" style="width:100%;height:auto">
+                </picture></div><div class="product-card__body"><p style="font-size:13px;color:var(--cb-text-muted);margin-bottom:4px;">Jan 19, 2026</p><h2 style="font-size:1.15rem;margin:0;">Energy-Efficient Window Treatments: Save on Bills Year-Round</h2><p>Cellular shades reduce energy costs by up to 40%.</p></div></div></a>
+<a href="/blog/2026-window-treatment-trends" style="text-decoration:none;color:var(--cb-text);"><div class="product-card"><div class="product-card__img"><picture>
+                    <source type="image/webp" srcset="/images/blog-2026-trends.webp 1920w, /images/blog-2026-trends-960w.webp 960w, /images/blog-2026-trends-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/blog-2026-trends.jpg 1920w, /images/blog-2026-trends-960w.jpg 960w, /images/blog-2026-trends-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/blog-2026-trends.jpg" alt="2026 Window Treatment Trends for Asheville and Hendersonville" loading="lazy" width="1920" height="900" style="width:100%;height:auto">
+                </picture></div><div class="product-card__body"><p style="font-size:13px;color:var(--cb-text-muted);margin-bottom:4px;">Jan 12, 2026</p><h2 style="font-size:1.15rem;margin:0;">2026 Window Treatment Trends for Asheville and Hendersonville</h2><p>Smart motorization, natural materials, and sustainability.</p></div></div></a>
             </div></div></section>
     <section class="cta-section section--dark"><div class="container"><h2>Ready to Transform Your Home?</h2><p>Schedule a free in-home consultation.</p><div class="cta-section__actions"><a href="/contact" class="btn btn--primary">Schedule Consultation</a><a href="tel:828-697-8525" class="btn btn--outline">Call (828) 697-8525</a></div></div></section>
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
+                    <picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
                     <img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="120" height="45">
+                </picture>
                     <p>Western North Carolina's trusted window treatment experts since 1992. Authorized Hunter Douglas Centurion Gallery Dealer with two showrooms and over 150 functional displays.</p>
                     <div class="footer__social" style="margin-top: 16px;">
                         <a href="https://www.facebook.com/carolinablindswnc" aria-label="Facebook" target="_blank" rel="noopener">

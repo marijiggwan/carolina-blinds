@@ -14,10 +14,11 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"></noscript>
     <link rel="stylesheet" href="/css/styles.css">
     <style>
-        .hero__bg { background-image: url('/images/hero-default.jpg'); }
+        .hero__bg { background-image: url('/images/hero-default.webp'); }
         .filter-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 32px 0 40px; }
         .filter-pill { padding: 8px 20px; border-radius: 24px; border: 1px solid var(--cb-border); font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s; background: transparent; color: var(--cb-text-light); font-family: 'Source Sans 3', sans-serif; }
         .filter-pill:hover { border-color: var(--cb-blue); color: var(--cb-blue); }
@@ -47,11 +48,51 @@
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XP96GEJS2D"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XP96GEJS2D');</script>
+
+    <!-- Lite YouTube Facade -->
+    <style>
+        .lite-yt { cursor: pointer; position: relative; width: 100%; height: 100%; }
+        .lite-yt img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .lite-yt__play {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            z-index: 2; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+            transition: filter 0.15s;
+        }
+        .lite-yt:hover .lite-yt__play { filter: drop-shadow(0 2px 12px rgba(0,0,0,0.6)) brightness(1.1); }
+        .lite-yt.activated { cursor: default; }
+        .lite-yt.activated .lite-yt__play,
+        .lite-yt.activated > picture,
+        .lite-yt.activated > img { display: none; }
+        .lite-yt iframe {
+            width: 100%; height: 100%; border: none;
+            position: absolute; top: 0; left: 0; z-index: 3;
+        }
+    </style>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.lite-yt').forEach(function(el) {
+            el.addEventListener('click', function() {
+                if (el.classList.contains('activated')) return;
+                var id = el.dataset.videoid;
+                var iframe = document.createElement('iframe');
+                iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1';
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                iframe.allowFullscreen = true;
+                el.appendChild(iframe);
+                el.classList.add('activated');
+            });
+        });
+    });
+    </script>
+
 </head>
 <body>
     <div class="top-bar"><div class="container"><div class="top-bar__phones"><a href="tel:828-697-8525"><span class="top-bar__city">Hendersonville</span><span class="top-bar__num">(828) 697-8525</span></a><span>|</span><a href="tel:828-681-0210"><span class="top-bar__city">Weaverville</span><span class="top-bar__num">(828) 681-0210</span></a></div><div class="top-bar__badge">Authorized Hunter Douglas Centurion Gallery</div></div></div>
     <header class="header"><div class="container">
-        <a href="/" class="header__logo"><img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="192" height="72"></a>
+        <a href="/" class="header__logo"><picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
+                    <img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="192" height="72">
+                </picture></a>
         <nav class="header__nav">
                 <a href="/">Home</a>
                 <a href="/products">Products</a>
@@ -87,17 +128,47 @@
                 <h2>Shutter Installations</h2>
                 <p>Plantation, caf&eacute;, specialty-shaped, painted, and stained shutters installed in WNC homes.</p>
                 <div class="photo-grid">
-                    <img src="/images/blog-child-safe.jpg" alt="Hunter Douglas Heritance shutters installed" loading="lazy">
-                    <img src="/images/blog-privacy.jpg" alt="Shutter installation by Carolina Blinds" loading="lazy">
-                    <img src="/images/product-shade-detail1.jpg" alt="Shutters 101 — choosing the right style" loading="lazy">
-                    <img src="/images/product-shade-detail2.jpg" alt="Specialty shaped shutter windows" loading="lazy">
-                    <img src="/images/product-shade-detail3.jpg" alt="Norman shutters installation" loading="lazy">
-                    <img src="/images/product-shade-detail4.jpg" alt="Shutters transforming style and light" loading="lazy">
+                    <picture>
+                    <source type="image/webp" srcset="/images/blog-child-safe.webp">
+                    <img src="/images/blog-child-safe.jpg" alt="Hunter Douglas Heritance shutters installed" loading="lazy" width="800" height="450" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/blog-privacy.webp">
+                    <img src="/images/blog-privacy.jpg" alt="Shutter installation by Carolina Blinds" loading="lazy" width="500" height="400" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/product-shade-detail1.webp">
+                    <img src="/images/product-shade-detail1.jpg" alt="Shutters 101 — choosing the right style" loading="lazy" width="400" height="400" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/product-shade-detail2.webp">
+                    <img src="/images/product-shade-detail2.jpg" alt="Specialty shaped shutter windows" loading="lazy" width="400" height="400" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/product-shade-detail3.webp">
+                    <img src="/images/product-shade-detail3.jpg" alt="Norman shutters installation" loading="lazy" width="400" height="400" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/product-shade-detail4.webp">
+                    <img src="/images/product-shade-detail4.jpg" alt="Shutters transforming style and light" loading="lazy" width="400" height="400" style="width:100%;height:auto">
+                </picture>
                 </div>
                 <h3 style="font-size: 1.2rem; margin-top: 32px;">Watch: Shutter Installations</h3>
                 <div class="video-row">
-                    <div class="vid"><iframe src="https://www.youtube.com/embed/fKSqOChpUa0?rel=0" title="Shutter installation by Carolina Blinds" loading="lazy" allowfullscreen></iframe></div>
-                    <div class="vid"><iframe src="https://www.youtube.com/embed/4vgjlhRVefs?rel=0" title="Shutter demonstration at Carolina Blinds" loading="lazy" allowfullscreen></iframe></div>
+                    <div class="vid"><div class="lite-yt" data-videoid="fKSqOChpUa0" tabindex="0" role="button" aria-label="Play: Shutter installation by Carolina Blinds">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/fKSqOChpUa0/hqdefault.webp">
+                            <img src="https://img.youtube.com/vi/fKSqOChpUa0/hqdefault.jpg" alt="Shutter installation by Carolina Blinds" loading="lazy" width="480" height="360">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true"><svg height="54" width="54" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></div>
+                    </div></div>
+                    <div class="vid"><div class="lite-yt" data-videoid="4vgjlhRVefs" tabindex="0" role="button" aria-label="Play: Shutter demonstration at Carolina Blinds">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/4vgjlhRVefs/hqdefault.webp">
+                            <img src="https://img.youtube.com/vi/4vgjlhRVefs/hqdefault.jpg" alt="Shutter demonstration at Carolina Blinds" loading="lazy" width="480" height="360">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true"><svg height="54" width="54" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></div>
+                    </div></div>
                 </div>
                 <a href="https://www.youtube.com/@carolinablinds/playlists" target="_blank" rel="noopener" class="playlist-link">View all shutter videos on YouTube &rarr;</a>
             </div>
@@ -106,17 +177,48 @@
                 <h2>Shade Installations</h2>
                 <p>Cellular honeycomb, roller, Roman, sheers, and woven wood shades in WNC homes.</p>
                 <div class="photo-grid">
-                    <img src="/images/product-shutter-detail1.jpg" alt="Hunter Douglas Duette Honeycomb Shades" loading="lazy">
-                    <img src="/images/product-shutter-detail2.jpg" alt="Hunter Douglas Pirouette sheer shadings" loading="lazy">
-                    <img src="/images/product-shutter-detail3.jpg" alt="Room darkening shades installation" loading="lazy">
-                    <img src="/images/product-blind-detail1.jpg" alt="Top down bottom up cordless cellular shades" loading="lazy">
-                    <img src="/images/product-blind-detail2.jpg" alt="Roman shades installation" loading="lazy">
-                    <img src="/images/blog-energy-efficient.jpg" alt="Duette honeycomb shades" loading="lazy">
+                    <picture>
+                    <source type="image/webp" srcset="/images/product-shutter-detail1.webp">
+                    <img src="/images/product-shutter-detail1.jpg" alt="Hunter Douglas Duette Honeycomb Shades" loading="lazy" width="400" height="400" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/product-shutter-detail2.webp">
+                    <img src="/images/product-shutter-detail2.jpg" alt="Hunter Douglas Pirouette sheer shadings" loading="lazy" width="400" height="400" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/product-shutter-detail3.webp">
+                    <img src="/images/product-shutter-detail3.jpg" alt="Room darkening shades installation" loading="lazy" width="400" height="400" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/product-blind-detail1.webp">
+                    <img src="/images/product-blind-detail1.jpg" alt="Top down bottom up cordless cellular shades" loading="lazy" width="400" height="400" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/product-blind-detail2.webp">
+                    <img src="/images/product-blind-detail2.jpg" alt="Roman shades installation" loading="lazy" width="400" height="400" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/blog-energy-efficient.webp 1920w, /images/blog-energy-efficient-960w.webp 960w, /images/blog-energy-efficient-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/blog-energy-efficient.jpg 1920w, /images/blog-energy-efficient-960w.jpg 960w, /images/blog-energy-efficient-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/blog-energy-efficient.jpg" alt="Duette honeycomb shades" loading="lazy" width="1920" height="900" style="width:100%;height:auto">
+                </picture>
                 </div>
                 <h3 style="font-size: 1.2rem; margin-top: 32px;">Watch: Shade Demonstrations</h3>
                 <div class="video-row">
-                    <div class="vid"><iframe src="https://www.youtube.com/embed/eYTJ_74Oj98?rel=0" title="Hunter Douglas Duette with PowerView" loading="lazy" allowfullscreen></iframe></div>
-                    <div class="vid"><iframe src="https://www.youtube.com/embed/FgWKmtGE9R8?rel=0" title="Hunter Douglas Provenance woven wood shades" loading="lazy" allowfullscreen></iframe></div>
+                    <div class="vid"><div class="lite-yt" data-videoid="eYTJ_74Oj98" tabindex="0" role="button" aria-label="Play: Hunter Douglas Duette with PowerView">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/eYTJ_74Oj98/hqdefault.webp">
+                            <img src="https://img.youtube.com/vi/eYTJ_74Oj98/hqdefault.jpg" alt="Hunter Douglas Duette with PowerView" loading="lazy" width="480" height="360">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true"><svg height="54" width="54" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></div>
+                    </div></div>
+                    <div class="vid"><div class="lite-yt" data-videoid="FgWKmtGE9R8" tabindex="0" role="button" aria-label="Play: Hunter Douglas Provenance woven wood shades">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/FgWKmtGE9R8/hqdefault.webp">
+                            <img src="https://img.youtube.com/vi/FgWKmtGE9R8/hqdefault.jpg" alt="Hunter Douglas Provenance woven wood shades" loading="lazy" width="480" height="360">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true"><svg height="54" width="54" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></div>
+                    </div></div>
                 </div>
                 <a href="https://www.youtube.com/@carolinablinds/playlists" target="_blank" rel="noopener" class="playlist-link">View all shade videos on YouTube &rarr;</a>
             </div>
@@ -125,17 +227,47 @@
                 <h2>Blind Installations</h2>
                 <p>Wood, alternative wood, aluminum, and vertical blinds installed throughout WNC.</p>
                 <div class="photo-grid">
-                    <img src="/images/blinds-parkland-wood.jpg" alt="Parkland wood blinds" loading="lazy">
-                    <img src="/images/blinds-everwood.jpg" alt="EverWood alternative wood blinds" loading="lazy">
-                    <img src="/images/product-shades-room.jpg" alt="Vertical blinds for sliding glass doors" loading="lazy">
-                    <img src="/images/product-shutters-room.jpg" alt="Custom blinds in WNC home" loading="lazy">
-                    <img src="/images/product-blinds-room.jpg" alt="Blind installation example" loading="lazy">
-                    <img src="/images/product-exterior-room.jpg" alt="Blinds installed in mountain home" loading="lazy">
+                    <picture>
+                    <source type="image/webp" srcset="/images/blinds-parkland-wood.webp">
+                    <img src="/images/blinds-parkland-wood.jpg" alt="Parkland wood blinds" loading="lazy" width="400" height="400" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/blinds-everwood.webp">
+                    <img src="/images/blinds-everwood.jpg" alt="EverWood alternative wood blinds" loading="lazy" width="400" height="400" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/product-shades-room.webp">
+                    <img src="/images/product-shades-room.jpg" alt="Vertical blinds for sliding glass doors" loading="lazy" width="600" height="450" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/product-shutters-room.webp">
+                    <img src="/images/product-shutters-room.jpg" alt="Custom blinds in WNC home" loading="lazy" width="600" height="450" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/product-blinds-room.webp">
+                    <img src="/images/product-blinds-room.jpg" alt="Blind installation example" loading="lazy" width="600" height="450" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/product-exterior-room.webp">
+                    <img src="/images/product-exterior-room.jpg" alt="Blinds installed in mountain home" loading="lazy" width="500" height="320" style="width:100%;height:auto">
+                </picture>
                 </div>
                 <h3 style="font-size: 1.2rem; margin-top: 32px;">Watch: Blind Installations</h3>
                 <div class="video-row">
-                    <div class="vid"><iframe src="https://www.youtube.com/embed/JR8Qdcg-CZg?rel=0" title="Motorized angle top shades — mountain home" loading="lazy" allowfullscreen></iframe></div>
-                    <div class="vid"><iframe src="https://www.youtube.com/embed/4QIt0ZyhPDo?rel=0" title="Hunter Douglas woven Roman shades with PowerView" loading="lazy" allowfullscreen></iframe></div>
+                    <div class="vid"><div class="lite-yt" data-videoid="JR8Qdcg-CZg" tabindex="0" role="button" aria-label="Play: Motorized angle top shades — mountain home">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/JR8Qdcg-CZg/hqdefault.webp">
+                            <img src="https://img.youtube.com/vi/JR8Qdcg-CZg/hqdefault.jpg" alt="Motorized angle top shades — mountain home" loading="lazy" width="480" height="360">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true"><svg height="54" width="54" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></div>
+                    </div></div>
+                    <div class="vid"><div class="lite-yt" data-videoid="4QIt0ZyhPDo" tabindex="0" role="button" aria-label="Play: Hunter Douglas woven Roman shades with PowerView">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/4QIt0ZyhPDo/hqdefault.webp">
+                            <img src="https://img.youtube.com/vi/4QIt0ZyhPDo/hqdefault.jpg" alt="Hunter Douglas woven Roman shades with PowerView" loading="lazy" width="480" height="360">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true"><svg height="54" width="54" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></div>
+                    </div></div>
                 </div>
                 <a href="https://www.youtube.com/@carolinablinds/playlists" target="_blank" rel="noopener" class="playlist-link">View all installation videos on YouTube &rarr;</a>
             </div>
@@ -144,12 +276,36 @@
                 <h2>Exterior Shade Installations</h2>
                 <p>Eclipse E-Zip retractable screens for porches, decks, and outdoor living spaces across WNC.</p>
                 <div class="video-row">
-                    <div class="vid"><iframe src="https://www.youtube.com/embed/TLMu55ijYfQ?rel=0" title="E-Zip Shades installation by Carolina Blinds" loading="lazy" allowfullscreen></iframe></div>
-                    <div class="vid"><iframe src="https://www.youtube.com/embed/479trXndYqU?rel=0" title="How to reduce glare with E-Zip Shades" loading="lazy" allowfullscreen></iframe></div>
+                    <div class="vid"><div class="lite-yt" data-videoid="TLMu55ijYfQ" tabindex="0" role="button" aria-label="Play: E-Zip Shades installation by Carolina Blinds">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/TLMu55ijYfQ/hqdefault.webp">
+                            <img src="https://img.youtube.com/vi/TLMu55ijYfQ/hqdefault.jpg" alt="E-Zip Shades installation by Carolina Blinds" loading="lazy" width="480" height="360">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true"><svg height="54" width="54" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></div>
+                    </div></div>
+                    <div class="vid"><div class="lite-yt" data-videoid="479trXndYqU" tabindex="0" role="button" aria-label="Play: How to reduce glare with E-Zip Shades">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/479trXndYqU/hqdefault.webp">
+                            <img src="https://img.youtube.com/vi/479trXndYqU/hqdefault.jpg" alt="How to reduce glare with E-Zip Shades" loading="lazy" width="480" height="360">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true"><svg height="54" width="54" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></div>
+                    </div></div>
                 </div>
                 <div class="video-row">
-                    <div class="vid"><iframe src="https://www.youtube.com/embed/brfZDjeW7Ag?rel=0" title="24 feet wide E-Zip Shades" loading="lazy" allowfullscreen></iframe></div>
-                    <div class="vid"><iframe src="https://www.youtube.com/embed/Tkq2N3uTI-c?rel=0" title="Protect your deck with E-Zip Shades" loading="lazy" allowfullscreen></iframe></div>
+                    <div class="vid"><div class="lite-yt" data-videoid="brfZDjeW7Ag" tabindex="0" role="button" aria-label="Play: 24 feet wide E-Zip Shades">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/brfZDjeW7Ag/hqdefault.webp">
+                            <img src="https://img.youtube.com/vi/brfZDjeW7Ag/hqdefault.jpg" alt="24 feet wide E-Zip Shades" loading="lazy" width="480" height="360">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true"><svg height="54" width="54" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></div>
+                    </div></div>
+                    <div class="vid"><div class="lite-yt" data-videoid="Tkq2N3uTI-c" tabindex="0" role="button" aria-label="Play: Protect your deck with E-Zip Shades">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/Tkq2N3uTI-c/hqdefault.webp">
+                            <img src="https://img.youtube.com/vi/Tkq2N3uTI-c/hqdefault.jpg" alt="Protect your deck with E-Zip Shades" loading="lazy" width="480" height="360">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true"><svg height="54" width="54" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></div>
+                    </div></div>
                 </div>
                 <a href="https://www.youtube.com/@carolinablinds/playlists" target="_blank" rel="noopener" class="playlist-link">View all exterior shade videos on YouTube &rarr;</a>
             </div>
@@ -158,12 +314,36 @@
                 <h2>Motorization Demos</h2>
                 <p>See Hunter Douglas PowerView&reg; automation in action &mdash; operated from app, remote, and voice assistant.</p>
                 <div class="video-row">
-                    <div class="vid"><iframe src="https://www.youtube.com/embed/eYTJ_74Oj98?rel=0" title="PowerView automation demo" loading="lazy" allowfullscreen></iframe></div>
-                    <div class="vid"><iframe src="https://www.youtube.com/embed/UR4Q2JbUtUs?rel=0" title="Motorized angle top honeycomb shades" loading="lazy" allowfullscreen></iframe></div>
+                    <div class="vid"><div class="lite-yt" data-videoid="eYTJ_74Oj98" tabindex="0" role="button" aria-label="Play: PowerView automation demo">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/eYTJ_74Oj98/hqdefault.webp">
+                            <img src="https://img.youtube.com/vi/eYTJ_74Oj98/hqdefault.jpg" alt="PowerView automation demo" loading="lazy" width="480" height="360">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true"><svg height="54" width="54" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></div>
+                    </div></div>
+                    <div class="vid"><div class="lite-yt" data-videoid="UR4Q2JbUtUs" tabindex="0" role="button" aria-label="Play: Motorized angle top honeycomb shades">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/UR4Q2JbUtUs/hqdefault.webp">
+                            <img src="https://img.youtube.com/vi/UR4Q2JbUtUs/hqdefault.jpg" alt="Motorized angle top honeycomb shades" loading="lazy" width="480" height="360">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true"><svg height="54" width="54" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></div>
+                    </div></div>
                 </div>
                 <div class="video-row">
-                    <div class="vid"><iframe src="https://www.youtube.com/embed/Z9HyDSycIDM?rel=0" title="Pirouette with PowerView" loading="lazy" allowfullscreen></iframe></div>
-                    <div class="vid"><iframe src="https://www.youtube.com/embed/f31aa1X5CjE?rel=0" title="Pirouette motorized wand demo" loading="lazy" allowfullscreen></iframe></div>
+                    <div class="vid"><div class="lite-yt" data-videoid="Z9HyDSycIDM" tabindex="0" role="button" aria-label="Play: Pirouette with PowerView">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/Z9HyDSycIDM/hqdefault.webp">
+                            <img src="https://img.youtube.com/vi/Z9HyDSycIDM/hqdefault.jpg" alt="Pirouette with PowerView" loading="lazy" width="480" height="360">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true"><svg height="54" width="54" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></div>
+                    </div></div>
+                    <div class="vid"><div class="lite-yt" data-videoid="f31aa1X5CjE" tabindex="0" role="button" aria-label="Play: Pirouette motorized wand demo">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/f31aa1X5CjE/hqdefault.webp">
+                            <img src="https://img.youtube.com/vi/f31aa1X5CjE/hqdefault.jpg" alt="Pirouette motorized wand demo" loading="lazy" width="480" height="360">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true"><svg height="54" width="54" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></div>
+                    </div></div>
                 </div>
                 <a href="https://www.youtube.com/@carolinablinds/playlists" target="_blank" rel="noopener" class="playlist-link">View all motorization videos on YouTube &rarr;</a>
             </div>
@@ -204,7 +384,10 @@
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
+                    <picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
                     <img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="120" height="45">
+                </picture>
                     <p>Western North Carolina's trusted window treatment experts since 1992. Authorized Hunter Douglas Centurion Gallery Dealer with two showrooms and over 150 functional displays.</p>
                     <div class="footer__social" style="margin-top: 16px;">
                         <a href="https://www.facebook.com/carolinablindswnc" aria-label="Facebook" target="_blank" rel="noopener">

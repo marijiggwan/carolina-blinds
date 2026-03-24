@@ -14,17 +14,58 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"></noscript>
     <link rel="stylesheet" href="/css/styles.css">
     <style>.hero__bg { background-image: url('https://i.ytimg.com/vi/fKSqOChpUa0/maxresdefault.jpg'); }</style>
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XP96GEJS2D"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XP96GEJS2D');</script>
+
+    <!-- Lite YouTube Facade -->
+    <style>
+        .lite-yt { cursor: pointer; position: relative; width: 100%; height: 100%; }
+        .lite-yt img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .lite-yt__play {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            z-index: 2; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+            transition: filter 0.15s;
+        }
+        .lite-yt:hover .lite-yt__play { filter: drop-shadow(0 2px 12px rgba(0,0,0,0.6)) brightness(1.1); }
+        .lite-yt.activated { cursor: default; }
+        .lite-yt.activated .lite-yt__play,
+        .lite-yt.activated > picture,
+        .lite-yt.activated > img { display: none; }
+        .lite-yt iframe {
+            width: 100%; height: 100%; border: none;
+            position: absolute; top: 0; left: 0; z-index: 3;
+        }
+    </style>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.lite-yt').forEach(function(el) {
+            el.addEventListener('click', function() {
+                if (el.classList.contains('activated')) return;
+                var id = el.dataset.videoid;
+                var iframe = document.createElement('iframe');
+                iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1';
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                iframe.allowFullscreen = true;
+                el.appendChild(iframe);
+                el.classList.add('activated');
+            });
+        });
+    });
+    </script>
+
 </head>
 <body>
     <div class="top-bar"><div class="container"><div class="top-bar__phones"><a href="tel:828-697-8525"><span class="top-bar__city">Hendersonville</span><span class="top-bar__num">(828) 697-8525</span></a><span>|</span><a href="tel:828-681-0210"><span class="top-bar__city">Weaverville</span><span class="top-bar__num">(828) 681-0210</span></a></div><div class="top-bar__badge">Authorized Hunter Douglas Centurion Gallery</div></div></div>
     <header class="header"><div class="container">
-        <a href="/" class="header__logo"><img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="192" height="72"></a>
+        <a href="/" class="header__logo"><picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
+                    <img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="192" height="72">
+                </picture></a>
         <nav class="header__nav">
                 <a href="/">Home</a>
                 <a href="/products">Products</a>
@@ -41,13 +82,22 @@
         <div class="hero__actions"><a href="/contact" class="btn btn--primary">Schedule Free Consultation</a><a href="tel:828-697-8525" class="btn btn--outline">Call (828) 697-8525</a></div>
     </div></section>
 
-    <section class="section"><div class="container" style="max-width:800px;"><div style="margin-bottom:24px;"><a href="/blog" style="font-size:14px;font-weight:600;">&larr; Back to Blog</a></div><p style="font-size:14px;color:var(--cb-text-muted);margin-bottom:8px;">February 2, 2026</p><h2 style="font-size:2rem;margin-bottom:24px;">Top Privacy Solutions for Mountain Living in Hendersonville, NC</h2><p>Privacy is a top priority for homeowners in Asheville and Hendersonville, NC, where properties often border scenic but visible landscapes. As leaves fall in autumn and especially during winter, unwanted views from neighbors or roads become an issue.</p><h3>The Privacy Challenges in Western NC</h3><p>Mountain living brings unique privacy concerns: elevated homes with large windows, proximity to hiking trails, and seasonal foliage changes.</p><h3>Custom Privacy Options</h3><p><strong>Sheer Shades:</strong> Hunter Douglas Silhouette&reg; shades diffuse light while blocking prying eyes. <strong>Room-Darkening Fabrics:</strong> Vignette&reg; Modern Roman Shades offer adjustable opacity. <strong>Top-Down/Bottom-Up Designs:</strong> Control privacy precisely &mdash; cover the bottom while enjoying upper views.</p><div style="margin:32px 0;aspect-ratio:16/9;border-radius:var(--radius-md);overflow:hidden;"><iframe src="https://www.youtube.com/embed/fKSqOChpUa0?rel=0" title="Privacy Solutions" loading="lazy" allowfullscreen style="width:100%;height:100%;border:none;"></iframe></div><h3>Integrating Privacy with Design</h3><p>Our shades complement custom homes' interiors, from rustic mountain lodges to modern estates. With over 30 years of experience, we've solved every privacy puzzle.</p><h3>Enhancing Privacy Year-Round</h3><p><strong>Automation:</strong> App-controlled motorization for remote adjustments. <strong>UV Protection:</strong> Built-in features guard against fading while maintaining privacy.</p><div style="margin-top:48px;padding-top:32px;border-top:1px solid var(--cb-border);text-align:center;"><p style="color:var(--cb-text-light);margin-bottom:16px;">Ready to upgrade your window treatments?</p><a href="/contact" class="btn btn--blue">Schedule Free Consultation</a></div></div></section>
+    <section class="section"><div class="container" style="max-width:800px;"><div style="margin-bottom:24px;"><a href="/blog" style="font-size:14px;font-weight:600;">&larr; Back to Blog</a></div><p style="font-size:14px;color:var(--cb-text-muted);margin-bottom:8px;">February 2, 2026</p><h2 style="font-size:2rem;margin-bottom:24px;">Top Privacy Solutions for Mountain Living in Hendersonville, NC</h2><p>Privacy is a top priority for homeowners in Asheville and Hendersonville, NC, where properties often border scenic but visible landscapes. As leaves fall in autumn and especially during winter, unwanted views from neighbors or roads become an issue.</p><h3>The Privacy Challenges in Western NC</h3><p>Mountain living brings unique privacy concerns: elevated homes with large windows, proximity to hiking trails, and seasonal foliage changes.</p><h3>Custom Privacy Options</h3><p><strong>Sheer Shades:</strong> Hunter Douglas Silhouette&reg; shades diffuse light while blocking prying eyes. <strong>Room-Darkening Fabrics:</strong> Vignette&reg; Modern Roman Shades offer adjustable opacity. <strong>Top-Down/Bottom-Up Designs:</strong> Control privacy precisely &mdash; cover the bottom while enjoying upper views.</p><div style="margin:32px 0;aspect-ratio:16/9;border-radius:var(--radius-md);overflow:hidden;"><div class="lite-yt" data-videoid="fKSqOChpUa0" tabindex="0" role="button" aria-label="Play: Privacy Solutions">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/fKSqOChpUa0/hqdefault.webp">
+                            <img src="https://img.youtube.com/vi/fKSqOChpUa0/hqdefault.jpg" alt="Privacy Solutions" loading="lazy" width="480" height="360">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true"><svg height="54" width="54" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></div>
+                    </div></div><h3>Integrating Privacy with Design</h3><p>Our shades complement custom homes' interiors, from rustic mountain lodges to modern estates. With over 30 years of experience, we've solved every privacy puzzle.</p><h3>Enhancing Privacy Year-Round</h3><p><strong>Automation:</strong> App-controlled motorization for remote adjustments. <strong>UV Protection:</strong> Built-in features guard against fading while maintaining privacy.</p><div style="margin-top:48px;padding-top:32px;border-top:1px solid var(--cb-border);text-align:center;"><p style="color:var(--cb-text-light);margin-bottom:16px;">Ready to upgrade your window treatments?</p><a href="/contact" class="btn btn--blue">Schedule Free Consultation</a></div></div></section>
     <section class="cta-section section--dark"><div class="container"><h2>Ready to Transform Your Home?</h2><p>Schedule a free in-home consultation.</p><div class="cta-section__actions"><a href="/contact" class="btn btn--primary">Schedule Consultation</a><a href="tel:828-697-8525" class="btn btn--outline">Call (828) 697-8525</a></div></div></section>
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
+                    <picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
                     <img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="120" height="45">
+                </picture>
                     <p>Western North Carolina's trusted window treatment experts since 1992. Authorized Hunter Douglas Centurion Gallery Dealer with two showrooms and over 150 functional displays.</p>
                     <div class="footer__social" style="margin-top: 16px;">
                         <a href="https://www.facebook.com/carolinablindswnc" aria-label="Facebook" target="_blank" rel="noopener">

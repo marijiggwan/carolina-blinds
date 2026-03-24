@@ -14,10 +14,11 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"></noscript>
     <link rel="stylesheet" href="/css/styles.css">
     <style>
-        .hero__bg { background-image: url('/images/hero-default.jpg'); }
+        .hero__bg { background-image: url('/images/hero-default.webp'); }
     </style>
 
     <!-- Google Analytics (GA4) -->
@@ -35,7 +36,10 @@
     </div>
     <header class="header">
         <div class="container">
-            <a href="/" class="header__logo"><img src="/images/cb-logo.jpg" alt="Carolina Blinds — Since 1992" width="192" height="72"></a>
+            <a href="/" class="header__logo"><picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
+                    <img src="/images/cb-logo.jpg" alt="Carolina Blinds — Since 1992" width="192" height="72">
+                </picture></a>
             <nav class="header__nav">
                 <a href="/">Home</a>
                 <a href="/products">Products</a>
@@ -77,9 +81,19 @@
 
                 </div>
                 <div class="intro__gallery">
-                    <img src="/images/hero-default.jpg" alt="Carolina Blinds showroom interior" loading="lazy">
-                    <img src="/images/showroom-interior.jpg" alt="Carolina Blinds team" loading="lazy">
-                    <img src="/images/showroom-displays.jpg" alt="Installation work" loading="lazy">
+                    <picture>
+                    <source type="image/webp" srcset="/images/hero-default.webp 1920w, /images/hero-default-960w.webp 960w, /images/hero-default-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/hero-default.jpg 1920w, /images/hero-default-960w.jpg 960w, /images/hero-default-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/hero-default.jpg" alt="Carolina Blinds showroom interior" loading="lazy" width="1920" height="900" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/showroom-interior.webp">
+                    <img src="/images/showroom-interior.jpg" alt="Carolina Blinds team" loading="lazy" width="500" height="400" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/showroom-displays.webp">
+                    <img src="/images/showroom-displays.jpg" alt="Installation work" loading="lazy" width="500" height="400" style="width:100%;height:auto">
+                </picture>
                 </div>
             </div>
         </div>
@@ -98,7 +112,10 @@
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
+                    <picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
                     <img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="120" height="45">
+                </picture>
                     <p>Western North Carolina's trusted window treatment experts since 1992. Authorized Hunter Douglas Centurion Gallery Dealer with two showrooms and over 150 functional displays.</p>
                     <div class="footer__social" style="margin-top: 16px;">
                         <a href="https://www.facebook.com/carolinablindswnc" aria-label="Facebook" target="_blank" rel="noopener">

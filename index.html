@@ -15,7 +15,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"></noscript>
 
     <!-- Schema: LocalBusiness -->
     <script type="application/ld+json">{
@@ -170,7 +171,7 @@
     <style>
         /* Homepage-specific: Hero with background image, grid layout + video */
         .home-hero .hero__bg {
-            background-image: url('/images/hero-homepage.jpg');
+            background-image: url('/images/hero-homepage.webp');
         }
         .home-hero .hero__overlay {
             background: linear-gradient(135deg, rgba(0,35,71,0.92) 0%, rgba(0,59,115,0.82) 50%, rgba(0,35,71,0.7) 100%);
@@ -193,6 +194,43 @@
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XP96GEJS2D"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XP96GEJS2D');</script>
+
+    <!-- Lite YouTube Facade -->
+    <style>
+        .lite-yt { cursor: pointer; position: relative; width: 100%; height: 100%; }
+        .lite-yt img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .lite-yt__play {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            z-index: 2; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+            transition: filter 0.15s;
+        }
+        .lite-yt:hover .lite-yt__play { filter: drop-shadow(0 2px 12px rgba(0,0,0,0.6)) brightness(1.1); }
+        .lite-yt.activated { cursor: default; }
+        .lite-yt.activated .lite-yt__play,
+        .lite-yt.activated > picture,
+        .lite-yt.activated > img { display: none; }
+        .lite-yt iframe {
+            width: 100%; height: 100%; border: none;
+            position: absolute; top: 0; left: 0; z-index: 3;
+        }
+    </style>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.lite-yt').forEach(function(el) {
+            el.addEventListener('click', function() {
+                if (el.classList.contains('activated')) return;
+                var id = el.dataset.videoid;
+                var iframe = document.createElement('iframe');
+                iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1';
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                iframe.allowFullscreen = true;
+                el.appendChild(iframe);
+                el.classList.add('activated');
+            });
+        });
+    });
+    </script>
+
 </head>
 <body>
 
@@ -212,7 +250,10 @@
     <header class="header">
         <div class="container">
             <a href="/" class="header__logo">
-                <img src="/images/cb-logo.jpg" alt="Carolina Blinds — Since 1992" width="192" height="72">
+                <picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
+                    <img src="/images/cb-logo.jpg" alt="Carolina Blinds — Since 1992" width="192" height="72">
+                </picture>
             </a>
             <nav class="header__nav">
                 <a href="/" class="active">Home</a>
@@ -271,15 +312,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero__video">
-                    <iframe
-                        src="https://www.youtube.com/embed/4vgjlhRVefs?rel=0&modestbranding=1"
-                        title="Carolina Blinds — Your Window Treatment Experts"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                        loading="lazy"
-                    ></iframe>
-                </div>
+                <div class="hero__video lite-yt" data-videoid="4vgjlhRVefs" tabindex="0" role="button" aria-label="Play video">
+                        <picture>
+                            <source type="image/webp" srcset="https://i.ytimg.com/vi_webp/4vgjlhRVefs/maxresdefault.webp">
+                            <img src="https://img.youtube.com/vi/4vgjlhRVefs/maxresdefault.jpg" alt="Carolina Blinds video" loading="lazy" width="1280" height="720" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0">
+                        </picture>
+                        <div class="lite-yt__play" aria-hidden="true">
+                            <svg height="72" width="72" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="white"/></svg>
+                        </div>
+                    </div>
             </div>
         </div>
     </section>
@@ -320,7 +361,11 @@
             <div class="products__grid">
                 <a href="/products/blinds" class="product-card">
                     <div class="product-card__img">
-                        <img src="/images/hub-blinds.jpg" alt="Hunter Douglas Parkland real wood blinds in a sunlit room" loading="lazy">
+                        <picture>
+                    <source type="image/webp" srcset="/images/hub-blinds.webp 1920w, /images/hub-blinds-960w.webp 960w, /images/hub-blinds-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/hub-blinds.jpg 1920w, /images/hub-blinds-960w.jpg 960w, /images/hub-blinds-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/hub-blinds.jpg" alt="Hunter Douglas Parkland real wood blinds in a sunlit room" loading="lazy" width="2050" height="1025" style="width:100%;height:auto">
+                </picture>
                     </div>
                     <div class="product-card__body">
                         <h3>Blinds</h3>
@@ -330,7 +375,11 @@
                 </a>
                 <a href="/products/shades" class="product-card">
                     <div class="product-card__img">
-                        <img src="/images/hub-shades.jpg" alt="Hunter Douglas Designer Roller Shades in a modern living space" loading="lazy">
+                        <picture>
+                    <source type="image/webp" srcset="/images/hub-shades.webp 1920w, /images/hub-shades-960w.webp 960w, /images/hub-shades-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/hub-shades.jpg 1920w, /images/hub-shades-960w.jpg 960w, /images/hub-shades-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/hub-shades.jpg" alt="Hunter Douglas Designer Roller Shades in a modern living space" loading="lazy" width="2050" height="1025" style="width:100%;height:auto">
+                </picture>
                     </div>
                     <div class="product-card__body">
                         <h3>Shades</h3>
@@ -340,7 +389,11 @@
                 </a>
                 <a href="/products/shutters" class="product-card">
                     <div class="product-card__img">
-                        <img src="/images/hub-shutters.jpg" alt="White plantation shutters in a bright dining room" loading="lazy">
+                        <picture>
+                    <source type="image/webp" srcset="/images/hub-shutters.webp 1920w, /images/hub-shutters-960w.webp 960w, /images/hub-shutters-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/hub-shutters.jpg 1920w, /images/hub-shutters-960w.jpg 960w, /images/hub-shutters-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/hub-shutters.jpg" alt="White plantation shutters in a bright dining room" loading="lazy" width="1920" height="959" style="width:100%;height:auto">
+                </picture>
                     </div>
                     <div class="product-card__body">
                         <h3>Shutters</h3>
@@ -350,7 +403,11 @@
                 </a>
                 <a href="/products/motorization" class="product-card">
                     <div class="product-card__img">
-                        <img src="/images/motorization-powerview.jpg" alt="Hunter Douglas PowerView Pebble remote for motorized blinds and shades" loading="lazy">
+                        <picture>
+                    <source type="image/webp" srcset="/images/motorization-powerview.webp 1920w, /images/motorization-powerview-960w.webp 960w, /images/motorization-powerview-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/motorization-powerview.jpg 1920w, /images/motorization-powerview-960w.jpg 960w, /images/motorization-powerview-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/motorization-powerview.jpg" alt="Hunter Douglas PowerView Pebble remote for motorized blinds and shades" loading="lazy" width="1200" height="800" style="width:100%;height:auto">
+                </picture>
                     </div>
                     <div class="product-card__body">
                         <h3>Motorization</h3>
@@ -413,9 +470,19 @@
                     </div>
                 </div>
                 <div class="why__images">
-                    <img src="/images/hero-default.jpg" alt="Carolina Blinds showroom interior with window treatment displays" loading="lazy">
-                    <img src="/images/showroom-interior.jpg" alt="Carolina Blinds team" loading="lazy">
-                    <img src="/images/showroom-displays.jpg" alt="Window treatment installation" loading="lazy">
+                    <picture>
+                    <source type="image/webp" srcset="/images/hero-default.webp 1920w, /images/hero-default-960w.webp 960w, /images/hero-default-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/hero-default.jpg 1920w, /images/hero-default-960w.jpg 960w, /images/hero-default-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/hero-default.jpg" alt="Carolina Blinds showroom interior with window treatment displays" loading="lazy" width="1920" height="900" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/showroom-interior.webp">
+                    <img src="/images/showroom-interior.jpg" alt="Carolina Blinds team" loading="lazy" width="500" height="400" style="width:100%;height:auto">
+                </picture>
+                    <picture>
+                    <source type="image/webp" srcset="/images/showroom-displays.webp">
+                    <img src="/images/showroom-displays.jpg" alt="Window treatment installation" loading="lazy" width="500" height="400" style="width:100%;height:auto">
+                </picture>
                 </div>
             </div>
         </div>
@@ -647,7 +714,10 @@
             </div>
             <div style="display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; opacity: 0.7;">
                 <div style="text-align: center;">
+                    <picture>
+                    <source type="image/webp" srcset="/images/hd-gallery-logo.webp">
                     <img src="/images/hd-gallery-logo.png" alt="Hunter Douglas Gallery" style="height: 32px; width: auto;">
+                </picture>
                 </div>
                 <div style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 22px; color: var(--cb-text); letter-spacing: 2px;">ALTA</div>
                 <div style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 22px; color: var(--cb-text); letter-spacing: 2px;">ECLIPSE</div>
@@ -681,7 +751,10 @@
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
+                    <picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
                     <img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="120" height="45">
+                </picture>
                     <p>Western North Carolina's trusted window treatment experts since 1992. Authorized Hunter Douglas Centurion Gallery Dealer with two showrooms and over 150 functional displays.</p>
                     <div class="footer__social" style="margin-top: 16px;">
                         <a href="https://www.facebook.com/carolinablindswnc" aria-label="Facebook" target="_blank" rel="noopener">

@@ -14,9 +14,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"></noscript>
     <link rel="stylesheet" href="/css/styles.css">
-    <style>.hero__bg { background-image: url('/images/blog-energy-efficient.jpg'); }</style>
+    <style>.hero__bg { background-image: url('/images/blog-energy-efficient.webp'); }</style>
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XP96GEJS2D"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XP96GEJS2D');</script>
@@ -24,7 +25,10 @@
 <body>
     <div class="top-bar"><div class="container"><div class="top-bar__phones"><a href="tel:828-697-8525"><span class="top-bar__city">Hendersonville</span><span class="top-bar__num">(828) 697-8525</span></a><span>|</span><a href="tel:828-681-0210"><span class="top-bar__city">Weaverville</span><span class="top-bar__num">(828) 681-0210</span></a></div><div class="top-bar__badge">Authorized Hunter Douglas Centurion Gallery</div></div></div>
     <header class="header"><div class="container">
-        <a href="/" class="header__logo"><img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="192" height="72"></a>
+        <a href="/" class="header__logo"><picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
+                    <img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="192" height="72">
+                </picture></a>
         <nav class="header__nav">
                 <a href="/">Home</a>
                 <a href="/products">Products</a>
@@ -41,13 +45,20 @@
         <div class="hero__actions"><a href="/contact" class="btn btn--primary">Schedule Free Consultation</a><a href="tel:828-697-8525" class="btn btn--outline">Call (828) 697-8525</a></div>
     </div></section>
 
-    <section class="section"><div class="container" style="max-width:800px;"><div style="margin-bottom:24px;"><a href="/blog" style="font-size:14px;font-weight:600;">&larr; Back to Blog</a></div><p style="font-size:14px;color:var(--cb-text-muted);margin-bottom:8px;">January 19, 2026</p><h2 style="font-size:2rem;margin-bottom:24px;">Energy-Efficient Window Treatments for Mountain Homes: Save on Bills Year-Round</h2><p>Living in the Blue Ridge Mountains means fluctuating temperatures. For homeowners in Asheville and Hendersonville, energy-efficient window coverings aren't just a luxury &mdash; they're a necessity. As a 30+ year Hunter Douglas Gallery&reg; dealer, Carolina Blinds specializes in solutions that reduce energy costs by up to 40%.</p><h3>Why Energy Efficiency Matters in Western NC</h3><p>Our variable climate can spike bills. Insulated cellular shades trap air to regulate indoor temps &mdash; ideal for homes in Weaverville, Asheville, Black Mountain, and Lake Lure.</p><h3>Top Energy-Saving Options</h3><p><strong>Duette&reg; Honeycomb Shades:</strong> Multi-cell design for superior insulation. <strong>Silhouette&reg; Shadings:</strong> Sheer vanes diffuse light while controlling heat. <strong>Vignette&reg; Modern Roman Shades:</strong> Layered fabrics for privacy and efficiency.</p><img src="/images/blog-energy-efficient.jpg" alt="Duette Cellular Shades" loading="lazy" style="border-radius:var(--radius-md);margin:24px 0;"><h3>Real Savings</h3><p>Customers report 20-30% lower energy bills post-installation. We measure every window and use in-house installers with our 1-Year Free In-Home Service guarantee.</p><div style="margin-top:48px;padding-top:32px;border-top:1px solid var(--cb-border);text-align:center;"><p style="color:var(--cb-text-light);margin-bottom:16px;">Ready to upgrade your window treatments?</p><a href="/contact" class="btn btn--blue">Schedule Free Consultation</a></div></div></section>
+    <section class="section"><div class="container" style="max-width:800px;"><div style="margin-bottom:24px;"><a href="/blog" style="font-size:14px;font-weight:600;">&larr; Back to Blog</a></div><p style="font-size:14px;color:var(--cb-text-muted);margin-bottom:8px;">January 19, 2026</p><h2 style="font-size:2rem;margin-bottom:24px;">Energy-Efficient Window Treatments for Mountain Homes: Save on Bills Year-Round</h2><p>Living in the Blue Ridge Mountains means fluctuating temperatures. For homeowners in Asheville and Hendersonville, energy-efficient window coverings aren't just a luxury &mdash; they're a necessity. As a 30+ year Hunter Douglas Gallery&reg; dealer, Carolina Blinds specializes in solutions that reduce energy costs by up to 40%.</p><h3>Why Energy Efficiency Matters in Western NC</h3><p>Our variable climate can spike bills. Insulated cellular shades trap air to regulate indoor temps &mdash; ideal for homes in Weaverville, Asheville, Black Mountain, and Lake Lure.</p><h3>Top Energy-Saving Options</h3><p><strong>Duette&reg; Honeycomb Shades:</strong> Multi-cell design for superior insulation. <strong>Silhouette&reg; Shadings:</strong> Sheer vanes diffuse light while controlling heat. <strong>Vignette&reg; Modern Roman Shades:</strong> Layered fabrics for privacy and efficiency.</p><picture>
+                    <source type="image/webp" srcset="/images/blog-energy-efficient.webp 1920w, /images/blog-energy-efficient-960w.webp 960w, /images/blog-energy-efficient-480w.webp 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <source type="image/jpg" srcset="/images/blog-energy-efficient.jpg 1920w, /images/blog-energy-efficient-960w.jpg 960w, /images/blog-energy-efficient-480w.jpg 480w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, 1920px">
+                    <img src="/images/blog-energy-efficient.jpg" alt="Duette Cellular Shades" loading="lazy" style="border-radius:var(--radius-md);margin:24px 0;" width="1920" height="900">
+                </picture><h3>Real Savings</h3><p>Customers report 20-30% lower energy bills post-installation. We measure every window and use in-house installers with our 1-Year Free In-Home Service guarantee.</p><div style="margin-top:48px;padding-top:32px;border-top:1px solid var(--cb-border);text-align:center;"><p style="color:var(--cb-text-light);margin-bottom:16px;">Ready to upgrade your window treatments?</p><a href="/contact" class="btn btn--blue">Schedule Free Consultation</a></div></div></section>
     <section class="cta-section section--dark"><div class="container"><h2>Ready to Transform Your Home?</h2><p>Schedule a free in-home consultation.</p><div class="cta-section__actions"><a href="/contact" class="btn btn--primary">Schedule Consultation</a><a href="tel:828-697-8525" class="btn btn--outline">Call (828) 697-8525</a></div></div></section>
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
+                    <picture>
+                    <source type="image/webp" srcset="/images/cb-logo.webp">
                     <img src="/images/cb-logo.jpg" alt="Carolina Blinds" width="120" height="45">
+                </picture>
                     <p>Western North Carolina's trusted window treatment experts since 1992. Authorized Hunter Douglas Centurion Gallery Dealer with two showrooms and over 150 functional displays.</p>
                     <div class="footer__social" style="margin-top: 16px;">
                         <a href="https://www.facebook.com/carolinablindswnc" aria-label="Facebook" target="_blank" rel="noopener">
