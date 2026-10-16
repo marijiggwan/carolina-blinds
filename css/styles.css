@@ -554,7 +554,7 @@ a:hover { color: var(--cb-blue); }
             margin-bottom: 16px; }
         .project__content h2 {font-size: 1.8rem; margin-bottom: 16px; }
         .project__content p {color: var(--cb-text-light); margin-bottom: 12px; }
-        .project__placeholder {background: var(--cb-warm);
+        .project__placeholder {display: none; background: var(--cb-warm);
             border: 2px dashed var(--cb-border);
             border-radius: var(--radius-md);
             padding: 24px;
